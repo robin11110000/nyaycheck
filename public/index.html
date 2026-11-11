@@ -1,29 +1,852 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#135d4c"><title>NyayCheck — Know where you stand</title>
-<style>
-:root{--ink:#172c29;--green:#135d4c;--muted:#63716c;--line:#dce4df;--paper:#fbfcf8;--wash:#edf4ee}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,sans-serif}header{max-width:1180px;margin:auto;padding:25px 36px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-size:23px;font-weight:750;letter-spacing:-1px}.brand span{color:var(--green)}.pill{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--line);padding:5px 12px;border-radius:30px}main{max-width:1110px;margin:auto;padding:68px 30px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--green);text-transform:uppercase}h1{font:500 clamp(40px,5.5vw,64px)/1.1 Georgia,serif;letter-spacing:-2px;margin:18px 0 24px}h1 em{color:var(--green);font-weight:400}.intro{max-width:590px;font-size:18px;color:var(--muted)}.layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(240px,1fr);gap:50px;margin-top:44px}form,.card{background:white;border:1px solid var(--line);padding:30px;border-radius:14px}label{font-weight:650;font-size:15px}textarea{display:block;width:100%;min-height:190px;resize:vertical;border:1px solid var(--line);border-radius:8px;margin:12px 0;padding:16px;font:inherit;line-height:1.6;background:#fcfdfb;color:var(--ink)}textarea:focus{outline:2px solid var(--green);outline-offset:2px}.small{font-size:12px;color:var(--muted)}.drop{display:block;text-align:center;border:1px dashed #9aada4;border-radius:8px;padding:20px 12px;cursor:pointer;margin:20px 0 8px}.drop.over{background:var(--wash)}.drop input{display:block;margin:12px auto;max-width:100%;font:inherit;font-size:12px}.drop strong{display:block;font-size:14px}.drop span{font-size:12px;color:var(--muted)}button{font:600 14px system-ui;cursor:pointer;border:0;border-radius:7px;padding:14px 18px;background:var(--green);color:white}button:focus-visible,summary:focus-visible{outline:3px solid #81a89a;outline-offset:3px}button:disabled{opacity:.55;cursor:wait}.submit{width:100%;margin-top:20px;font-size:15px}.secondary{background:transparent;color:var(--green);border:1px solid var(--line);padding:7px 10px}.controls{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:18px}.controls label{font-size:12px;font-weight:400}.notice{border-left:3px solid var(--green);background:var(--wash);padding:12px 15px;font-size:12px;margin-top:17px}aside h2{font:400 28px Georgia,serif;margin:0 0 24px}.step{display:grid;grid-template-columns:30px 1fr;gap:12px;margin:23px 0}.num{color:var(--green);font:16px Georgia;border-bottom:1px solid var(--line);align-self:start}.step strong{font-size:14px}.step p{font-size:13px;color:var(--muted);margin:4px 0}.aside-note{border-top:1px solid var(--line);padding-top:20px;font-size:12px;color:var(--muted)}#progress{margin-top:30px;display:flex;flex-wrap:wrap;gap:8px}.stage{border:1px solid var(--line);border-radius:20px;padding:4px 10px;font-size:12px}.stage.current{background:var(--green);color:white}.stage.done{background:var(--wash)}#results{margin-top:30px}#results h2{font:400 32px Georgia,serif}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.metric{background:var(--wash);padding:18px;border-radius:8px}.metric span{display:block;font-size:12px;color:var(--muted)}.metric strong{display:block;font-size:21px;margin:5px 0}.section{border-top:1px solid var(--line);margin-top:22px;padding-top:20px}h3{font-size:17px;margin:0 0 10px}a{color:var(--green);overflow-wrap:anywhere}.warn{background:#f5f1e5;border:1px solid #e1d9bc;padding:14px;border-radius:8px;font-size:13px;margin:12px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;background:var(--wash);padding:15px;max-height:450px;overflow:auto}summary{cursor:pointer;color:var(--green);font-size:14px}.tracewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:11px}td,th{padding:10px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}.draft{white-space:pre-wrap;line-height:1.8;background:var(--wash);padding:20px;border-radius:8px}footer{max-width:1050px;margin:0 auto;padding:25px 30px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;gap:24px}[hidden]{display:none!important}@media(max-width:760px){header{padding:20px}.pill{font-size:9px}main{padding:40px 20px}.layout{grid-template-columns:1fr;gap:30px}form,.card{padding:22px}.grid{grid-template-columns:1fr}footer{display:block}h1{letter-spacing:-1px}}
-</style></head><body>
-<header><div class="brand">Nyay<span>Check</span><span aria-hidden="true"> ↗</span></div><div class="pill">Consumer clarity · India</div></header>
-<main><div class="eyebrow">A clearer first step</div><h1>Something went wrong.<br><em>Know where you stand.</em></h1><p class="intro">Understand your consumer rights, the right commission, and what to do next. Start with your side of the story.</p>
-<div id="configuration" class="notice" hidden></div><div class="layout"><form id="caseForm"><label for="story">What happened?</label><textarea id="story" minlength="20" maxlength="16000" required placeholder="I bought a phone for ₹62,000 for personal use. It stopped working soon after delivery. The seller refused a refund…&#10;&#10;Include the amount paid, purchase date, when the problem started, and what you’ve tried."></textarea><div class="small">Use exact dates where possible. Leave out names, addresses and account numbers.</div>
-<label class="drop" id="drop"><strong>Invoice or receipt</strong><span>Drop a PDF, JPG or PNG · max 1 MB each · up to three files</span><input id="files" type="file" accept="image/png,image/jpeg,application/pdf" multiple aria-label="Choose invoices"></label><div id="fileList" class="small"></div>
-<div class="notice">Typed Aadhaar and PAN patterns are redacted before gateway calls. Image/PDF redaction is not available: attachments will not be transmitted. For now, transcribe the invoice details above. Case text stays in this server’s memory; Otari and its providers have their own data policies.</div>
-<button id="submit" class="submit" type="submit">Check my case <span aria-hidden="true">→</span></button><div class="controls"><label><input type="checkbox" id="simulate"> Simulate provider failure</label><button class="secondary" id="switch" type="button">Switch demo user</button></div><p class="small">No account needed. No filing or government form submission.</p></form>
-<aside><h2>From uncertainty<br>to a next step.</h2><div class="step"><span class="num">01</span><div><strong>Check the basics</strong><p>Eligibility, filing commission, fees and limitation, calculated with deterministic rules.</p></div></div><div class="step"><span class="num">02</span><div><strong>Look at past orders</strong><p>Source-linked decisions and descriptive awards. Missing evidence is shown clearly.</p></div></div><div class="step"><span class="num">03</span><div><strong>Prepare your next move</strong><p>A practical checklist and a grievance draft you can review and copy.</p></div></div><p class="aside-note">Built around the Consumer Protection Act, 2019.<br>Past awards are context, never a promise.</p></aside></div>
-<div id="status" role="status" aria-live="polite"></div><div id="progress" hidden></div><section id="results" aria-live="polite" hidden></section></main>
-<footer><span>NyayCheck · Clarity before action.</span><span>Not legal advice. An advocate should review anything significant.<br>Figures reflect past orders and are not predictions.</span></footer>
-<script>
-const $=s=>document.querySelector(s);let selected=[];const stages=['extract','rules','search','award','verdict','assemble'];const titles={extract:'Read facts',rules:'Check rules',search:'Find orders',award:'Calculate awards',verdict:'Explain',assemble:'Check budget / assemble'};
-function el(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e}function add(parent,tag,text,cls){const e=el(tag,text,cls);parent.append(e);return e}function money(n){return n===null||n===undefined?'Unavailable':'₹'+Number(n).toLocaleString('en-IN',{maximumFractionDigits:2})}function link(parent,text,url){try{const u=new URL(url);if(!['https:','http:'].includes(u.protocol))return;const a=add(parent,'a',text);a.href=u.href;a.target='_blank';a.rel='noopener noreferrer'}catch{}}
-fetch('/api/health').then(r=>r.json()).then(x=>{if(!x.configured){$('#configuration').hidden=false;$('#configuration').textContent='Gateway setup needed: add your Otari service key and routing policies to .env before a live check. The interface is ready; no sample result is presented as a live run.'}}).catch(()=>{});
-function choose(files){selected=Array.from(files);$('#fileList').textContent=selected.map(f=>f.name).join(' · ')}$('#files').onchange=e=>choose(e.target.files);$('#drop').ondragover=e=>{e.preventDefault();$('#drop').classList.add('over')};$('#drop').ondragleave=()=>$('#drop').classList.remove('over');$('#drop').ondrop=e=>{e.preventDefault();$('#drop').classList.remove('over');choose(e.dataTransfer.files)};
-$('#switch').onclick=async()=>{try{const r=await fetch('/api/switch-user',{method:'POST'});if(!r.ok)throw Error();$('#status').textContent='Switched to a new anonymous demo user.'}catch{$('#status').textContent='Could not switch user.'}};
-$('#caseForm').onsubmit=async e=>{e.preventDefault();if(selected.length){$('#status').textContent='Attachments cannot be safely redacted yet. Remove the files and enter their amount and dates in the story.';return}$('#submit').disabled=true;$('#switch').disabled=true;$('#results').hidden=true;$('#progress').hidden=false;$('#progress').replaceChildren(...stages.map(s=>{let n=el('span',titles[s],'stage');n.dataset.stage=s;return n}));$('#status').textContent='Checking the gateway budget…';
-try{const r=await fetch('/api/check',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({story:$('#story').value,attachments:[],simulateFailure:$('#simulate').checked})});if(!r.ok){let d=await r.json();throw Error(d.error||'Request failed')}const reader=r.body.getReader(),decoder=new TextDecoder();let buffer='',received=false;while(true){const {done,value}=await reader.read();buffer+=decoder.decode(value||new Uint8Array(),{stream:!done});let end;while((end=buffer.indexOf('\n\n'))!==-1){const block=buffer.slice(0,end);buffer=buffer.slice(end+2);const event=block.split('\n').find(l=>l.startsWith('event: '))?.slice(7);const line=block.split('\n').find(l=>l.startsWith('data: '));if(!line)continue;const data=JSON.parse(line.slice(6));if(event==='stage'){$('#status').textContent=titles[data.stage]+'…';document.querySelectorAll('.stage').forEach(n=>n.classList.toggle('current',n.dataset.stage===data.stage))}if(event==='result'){received=true;render(data)}}if(done)break}if(!received)throw Error('Connection ended before a result arrived. No result was saved.');}catch(err){$('#status').textContent=err.message}finally{$('#submit').disabled=false;$('#switch').disabled=false;document.querySelectorAll('.stage').forEach(n=>n.classList.remove('current'))}};
-function render(d){$('#status').textContent=d.status==='complete'?'Your check is ready.':'Your check needs attention.';const root=$('#results');root.hidden=false;root.replaceChildren();const card=add(root,'div',undefined,'card');add(card,'div',d.status==='complete'?'YOUR CASE CHECK':'PARTIAL CHECK','eyebrow');add(card,'h2',d.status==='budget'?'Your checks are paused':'Here’s where you stand');if(d.message)add(card,'p',d.message,'warn');for(const w of d.warnings||[])add(card,'p',w,'warn');if(d.facts)add(card,'p',d.facts.summary);
-const r=d.rules;if(r){const grid=add(card,'div',undefined,'grid');for(const [label,value] of [['Consumer eligibility',r.eligibility.value?'Appears eligible':'Likely excluded'],['Primary commission',r.forum.value||'Amount needed'],['Filing fee',r.fee.value?(r.fee.value.min===r.fee.value.max?money(r.fee.value.min):money(r.fee.value.min)+'–'+money(r.fee.value.max)):'Amount needed']]){const m=add(grid,'div',undefined,'metric');add(m,'span',label);add(m,'strong',value)}const limit=r.limitation.value;add(card,'p',limit.deadline?'Limitation deadline: '+limit.deadline+' · '+limit.daysRemaining+' days remaining'+(limit.expired?' · Expired; condonation is not automatic.':''):'Limitation: a cause-of-action date is needed.');if(r.forumConflict.value)add(card,'p','Jurisdiction conflict: primary basis '+r.forum.value+'; alternative guide basis '+r.alternateForum.value+'. Consideration paid is primary.','warn');if(r.fee.confidence==='low'){add(card,'p','Fee sources conflict. Confirm the applicable fee with the registry before filing.','warn');link(card,'Reported conflicting source',r.feeConflictSource)}const detail=add(card,'details');add(detail,'summary','Rule basis, figures and sources');for(const key of ['eligibility','claimA','claimB','forum','fee','limitation','territory']){const rule=r[key];const p=add(detail,'p');add(p,'strong',key+': ');add(p,'span',JSON.stringify(rule.value)+' · '+rule.basis+' · Confidence: '+rule.confidence+' ');link(p,'Source',rule.source_note)}add(card,'h3','Your document checklist','section');const ul=add(card,'ul');for(const c of r.checklist.value)add(ul,'li',c)}
-if(d.orders){add(card,'h3','Similar past orders','section');if(d.usedSeed)add(card,'p','Seed fallback is active. Only reviewed records contribute to statistics; the available sample may be insufficient.','warn');if(!d.orders.length)add(card,'p','No verified orders available. No award estimate has been invented.');for(const o of d.orders){const p=add(card,'p');link(p,o.caseNumber+' · '+o.commission+' · '+o.date,o.url);add(p,'br');add(p,'span',o.summary+' · '+o.outcome.replaceAll('_',' '))}}
-if(d.stats){const s=d.stats;add(card,'h3','Past awards, not predicted awards','section');add(card,'p','Verified sample: '+s.n+' orders. '+s.note);if(s.insufficient_data)add(card,'p','Insufficient data: fewer than three verified orders. No median.','warn');add(card,'p','Compensation median: '+money(s.compensationMedian)+' · min '+money(s.compensationMin)+' · max '+money(s.compensationMax));add(card,'p','Total award range (excluding interest): '+(s.totalAwardRange?s.totalAwardRange.map(money).join('–'):'Unavailable'));add(card,'p','Refund granted rate: '+(s.refundGrantedRate===null?'Unavailable':(s.refundGrantedRate*100).toFixed(1)+'%')+' across '+s.refundKnownN+' orders with known refund amounts.');const dd=add(card,'details');add(dd,'summary','All award statistics');add(dd,'pre',JSON.stringify(s,null,2))}
-if(d.verdict){const v=d.verdict;add(card,'h3','Evidence strength: '+v.strength.replaceAll('_',' '),'section');for(const [title,items] of [['What helps',v.helps],['What needs work',v.hurts]]){add(card,'strong',title);const ul=add(card,'ul');items.forEach(t=>add(ul,'li',t))}add(card,'h3','Next step: '+v.nextStep.replaceAll('_',' '));add(card,'p',v.nextStepReason);add(card,'h3','National Consumer Helpline draft','section');add(card,'p','Review the text and fill every placeholder before using it.');add(card,'div',v.nchDraft,'draft');const b=add(card,'button','Copy draft');b.onclick=async()=>{try{await navigator.clipboard.writeText(v.nchDraft);b.textContent='Copied'}catch{b.textContent='Select and copy the text above'}};const ul=add(card,'ul');v.caveats.forEach(t=>add(ul,'li',t))}
-const trace=add(card,'details',undefined,'section');add(trace,'summary','Gateway trace & budget');add(trace,'p','Reported run cost: '+(d.costUsd===undefined?'Unavailable':'$'+d.costUsd.toFixed(6))+(d.costIncomplete?' · Some costs were unreported; total is incomplete.':''));const wrap=add(trace,'div',undefined,'tracewrap'),table=add(wrap,'table'),tr=add(table,'tr');['Stage','Model','Provider','Fallback','Attempts','Request ID','Cost USD','Time'].forEach(t=>add(tr,'th',t));for(const t of d.trace||[]){const row=add(table,'tr');[t.stage,t.model??'Unreported',t.provider??'Unreported',t.fallback===null?'Unreported':String(t.fallback),t.attempts??'Unreported',t.requestId??'Unreported',t.costUsd??'Unreported',t.ms+' ms'].forEach(x=>add(row,'td',String(x)))}add(trace,'p','End-user budget response (unavailable means not reported by the service):');add(trace,'pre',d.budget?JSON.stringify(d.budget,null,2):'Unavailable');const raw=add(trace,'details');add(raw,'summary','Response metadata and guardrails');add(raw,'pre',JSON.stringify(d.trace||[],null,2));add(card,'p',d.disclaimer,'notice');}
-</script></body></html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#135d4c" />
+    <title>NyayCheck — Know where you stand</title>
+    <style>
+      :root {
+        --ink: #172c29;
+        --green: #135d4c;
+        --muted: #63716c;
+        --line: #dce4df;
+        --paper: #fbfcf8;
+        --wash: #edf4ee;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font:
+          16px/1.65 system-ui,
+          sans-serif;
+      }
+      header {
+        max-width: 1180px;
+        margin: auto;
+        padding: 25px 36px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--line);
+      }
+      .brand {
+        font-size: 23px;
+        font-weight: 750;
+        letter-spacing: -1px;
+      }
+      .brand span {
+        color: var(--green);
+      }
+      .pill {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        border: 1px solid var(--line);
+        padding: 5px 12px;
+        border-radius: 30px;
+      }
+      main {
+        max-width: 1110px;
+        margin: auto;
+        padding: 68px 30px;
+      }
+      .eyebrow {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--green);
+        text-transform: uppercase;
+      }
+      h1 {
+        font:
+          500 clamp(40px, 5.5vw, 64px)/1.1 Georgia,
+          serif;
+        letter-spacing: -2px;
+        margin: 18px 0 24px;
+      }
+      h1 em {
+        color: var(--green);
+        font-weight: 400;
+      }
+      .intro {
+        max-width: 590px;
+        font-size: 18px;
+        color: var(--muted);
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.7fr) minmax(240px, 1fr);
+        gap: 50px;
+        margin-top: 44px;
+      }
+      form,
+      .card {
+        background: white;
+        border: 1px solid var(--line);
+        padding: 30px;
+        border-radius: 14px;
+      }
+      label {
+        font-weight: 650;
+        font-size: 15px;
+      }
+      textarea {
+        display: block;
+        width: 100%;
+        min-height: 190px;
+        resize: vertical;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        margin: 12px 0;
+        padding: 16px;
+        font: inherit;
+        line-height: 1.6;
+        background: #fcfdfb;
+        color: var(--ink);
+      }
+      textarea:focus {
+        outline: 2px solid var(--green);
+        outline-offset: 2px;
+      }
+      .small {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .drop {
+        display: block;
+        text-align: center;
+        border: 1px dashed #9aada4;
+        border-radius: 8px;
+        padding: 20px 12px;
+        cursor: pointer;
+        margin: 20px 0 8px;
+      }
+      .drop.over {
+        background: var(--wash);
+      }
+      .drop input {
+        display: block;
+        margin: 12px auto;
+        max-width: 100%;
+        font: inherit;
+        font-size: 12px;
+      }
+      .drop strong {
+        display: block;
+        font-size: 14px;
+      }
+      .drop span {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      button {
+        font: 600 14px system-ui;
+        cursor: pointer;
+        border: 0;
+        border-radius: 7px;
+        padding: 14px 18px;
+        background: var(--green);
+        color: white;
+      }
+      button:focus-visible,
+      summary:focus-visible {
+        outline: 3px solid #81a89a;
+        outline-offset: 3px;
+      }
+      button:disabled {
+        opacity: 0.55;
+        cursor: wait;
+      }
+      .submit {
+        width: 100%;
+        margin-top: 20px;
+        font-size: 15px;
+      }
+      .secondary {
+        background: transparent;
+        color: var(--green);
+        border: 1px solid var(--line);
+        padding: 7px 10px;
+      }
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 18px;
+      }
+      .controls label {
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .notice {
+        border-left: 3px solid var(--green);
+        background: var(--wash);
+        padding: 12px 15px;
+        font-size: 12px;
+        margin-top: 17px;
+      }
+      aside h2 {
+        font:
+          400 28px Georgia,
+          serif;
+        margin: 0 0 24px;
+      }
+      .step {
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        gap: 12px;
+        margin: 23px 0;
+      }
+      .num {
+        color: var(--green);
+        font: 16px Georgia;
+        border-bottom: 1px solid var(--line);
+        align-self: start;
+      }
+      .step strong {
+        font-size: 14px;
+      }
+      .step p {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 4px 0;
+      }
+      .aside-note {
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      #progress {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .stage {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 4px 10px;
+        font-size: 12px;
+      }
+      .stage.current {
+        background: var(--green);
+        color: white;
+      }
+      .stage.done {
+        background: var(--wash);
+      }
+      #results {
+        margin-top: 30px;
+      }
+      #results h2 {
+        font:
+          400 32px Georgia,
+          serif;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .metric {
+        background: var(--wash);
+        padding: 18px;
+        border-radius: 8px;
+      }
+      .metric span {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .metric strong {
+        display: block;
+        font-size: 21px;
+        margin: 5px 0;
+      }
+      .section {
+        border-top: 1px solid var(--line);
+        margin-top: 22px;
+        padding-top: 20px;
+      }
+      h3 {
+        font-size: 17px;
+        margin: 0 0 10px;
+      }
+      a {
+        color: var(--green);
+        overflow-wrap: anywhere;
+      }
+      .warn {
+        background: #f5f1e5;
+        border: 1px solid #e1d9bc;
+        padding: 14px;
+        border-radius: 8px;
+        font-size: 13px;
+        margin: 12px 0;
+      }
+      pre {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font-size: 12px;
+        background: var(--wash);
+        padding: 15px;
+        max-height: 450px;
+        overflow: auto;
+      }
+      summary {
+        cursor: pointer;
+        color: var(--green);
+        font-size: 14px;
+      }
+      .tracewrap {
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 11px;
+      }
+      td,
+      th {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid var(--line);
+        white-space: nowrap;
+      }
+      .draft {
+        white-space: pre-wrap;
+        line-height: 1.8;
+        background: var(--wash);
+        padding: 20px;
+        border-radius: 8px;
+      }
+      footer {
+        max-width: 1050px;
+        margin: 0 auto;
+        padding: 25px 30px;
+        border-top: 1px solid var(--line);
+        font-size: 11px;
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      @media (max-width: 760px) {
+        header {
+          padding: 20px;
+        }
+        .pill {
+          font-size: 9px;
+        }
+        main {
+          padding: 40px 20px;
+        }
+        .layout {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+        form,
+        .card {
+          padding: 22px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        footer {
+          display: block;
+        }
+        h1 {
+          letter-spacing: -1px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">Nyay<span>Check</span><span aria-hidden="true"> ↗</span></div>
+      <div class="pill">Consumer clarity · India</div>
+    </header>
+    <main>
+      <div class="eyebrow">A clearer first step</div>
+      <h1>Something went wrong.<br /><em>Know where you stand.</em></h1>
+      <p class="intro">
+        Understand your consumer rights, the right commission, and what to do next. Start with your
+        side of the story.
+      </p>
+      <div id="configuration" class="notice" hidden></div>
+      <div class="layout">
+        <form id="caseForm">
+          <label for="story">What happened?</label
+          ><textarea
+            id="story"
+            minlength="20"
+            maxlength="16000"
+            required
+            placeholder="I bought a phone for ₹62,000 for personal use. It stopped working soon after delivery. The seller refused a refund…&#10;&#10;Include the amount paid, purchase date, when the problem started, and what you’ve tried."
+          ></textarea>
+          <div class="small">
+            Use exact dates where possible. Leave out names, addresses and account numbers.
+          </div>
+          <label class="drop" id="drop"
+            ><strong>Invoice or receipt</strong
+            ><span>Drop a PDF, JPG or PNG · max 1 MB each · up to three files</span
+            ><input
+              id="files"
+              type="file"
+              accept="image/png,image/jpeg,application/pdf"
+              multiple
+              aria-label="Choose invoices"
+          /></label>
+          <div id="fileList" class="small"></div>
+          <div class="notice">
+            Typed Aadhaar and PAN patterns are redacted before gateway calls. Image/PDF redaction is
+            not available: attachments will not be transmitted. For now, transcribe the invoice
+            details above. Case text stays in this server’s memory; Otari and its providers have
+            their own data policies.
+          </div>
+          <button id="submit" class="submit" type="submit">
+            Check my case <span aria-hidden="true">→</span>
+          </button>
+          <div class="controls">
+            <label><input type="checkbox" id="simulate" /> Simulate provider failure</label
+            ><button class="secondary" id="switch" type="button">Switch demo user</button>
+          </div>
+          <p class="small">No account needed. No filing or government form submission.</p>
+        </form>
+        <aside>
+          <h2>From uncertainty<br />to a next step.</h2>
+          <div class="step">
+            <span class="num">01</span>
+            <div>
+              <strong>Check the basics</strong>
+              <p>
+                Eligibility, filing commission, fees and limitation, calculated with deterministic
+                rules.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="num">02</span>
+            <div>
+              <strong>Look at past orders</strong>
+              <p>
+                Source-linked decisions and descriptive awards. Missing evidence is shown clearly.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="num">03</span>
+            <div>
+              <strong>Prepare your next move</strong>
+              <p>A practical checklist and a grievance draft you can review and copy.</p>
+            </div>
+          </div>
+          <p class="aside-note">
+            Built around the Consumer Protection Act, 2019.<br />Past awards are context, never a
+            promise.
+          </p>
+        </aside>
+      </div>
+      <div id="status" role="status" aria-live="polite"></div>
+      <div id="progress" hidden></div>
+      <section id="results" aria-live="polite" hidden></section>
+    </main>
+    <footer>
+      <span>NyayCheck · Clarity before action.</span
+      ><span
+        >Not legal advice. An advocate should review anything significant.<br />Figures reflect past
+        orders and are not predictions.</span
+      >
+    </footer>
+    <script>
+      const $ = (s) => document.querySelector(s);
+      let selected = [];
+      const stages = ['extract', 'rules', 'search', 'award', 'verdict', 'assemble'];
+      const titles = {
+        extract: 'Read facts',
+        rules: 'Check rules',
+        search: 'Find orders',
+        award: 'Calculate awards',
+        verdict: 'Explain',
+        assemble: 'Check budget / assemble',
+      };
+      function el(tag, text, cls) {
+        const e = document.createElement(tag);
+        if (text !== undefined) e.textContent = text;
+        if (cls) e.className = cls;
+        return e;
+      }
+      function add(parent, tag, text, cls) {
+        const e = el(tag, text, cls);
+        parent.append(e);
+        return e;
+      }
+      function money(n) {
+        return n === null || n === undefined
+          ? 'Unavailable'
+          : '₹' + Number(n).toLocaleString('en-IN', { maximumFractionDigits: 2 });
+      }
+      function link(parent, text, url) {
+        try {
+          const u = new URL(url);
+          if (!['https:', 'http:'].includes(u.protocol)) return;
+          const a = add(parent, 'a', text);
+          a.href = u.href;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+        } catch {}
+      }
+      fetch('/api/health')
+        .then((r) => r.json())
+        .then((x) => {
+          if (!x.configured) {
+            $('#configuration').hidden = false;
+            $('#configuration').textContent =
+              'Gateway setup needed: add your Otari service key and routing policies to .env before a live check. The interface is ready; no sample result is presented as a live run.';
+          }
+        })
+        .catch(() => {});
+      function choose(files) {
+        selected = Array.from(files);
+        $('#fileList').textContent = selected.map((f) => f.name).join(' · ');
+      }
+      $('#files').onchange = (e) => choose(e.target.files);
+      $('#drop').ondragover = (e) => {
+        e.preventDefault();
+        $('#drop').classList.add('over');
+      };
+      $('#drop').ondragleave = () => $('#drop').classList.remove('over');
+      $('#drop').ondrop = (e) => {
+        e.preventDefault();
+        $('#drop').classList.remove('over');
+        choose(e.dataTransfer.files);
+      };
+      $('#switch').onclick = async () => {
+        try {
+          const r = await fetch('/api/switch-user', { method: 'POST' });
+          if (!r.ok) throw Error();
+          $('#status').textContent = 'Switched to a new anonymous demo user.';
+        } catch {
+          $('#status').textContent = 'Could not switch user.';
+        }
+      };
+      $('#caseForm').onsubmit = async (e) => {
+        e.preventDefault();
+        if (selected.length) {
+          $('#status').textContent =
+            'Attachments cannot be safely redacted yet. Remove the files and enter their amount and dates in the story.';
+          return;
+        }
+        $('#submit').disabled = true;
+        $('#switch').disabled = true;
+        $('#results').hidden = true;
+        $('#progress').hidden = false;
+        $('#progress').replaceChildren(
+          ...stages.map((s) => {
+            let n = el('span', titles[s], 'stage');
+            n.dataset.stage = s;
+            return n;
+          }),
+        );
+        $('#status').textContent = 'Checking the gateway budget…';
+        try {
+          const r = await fetch('/api/check', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              story: $('#story').value,
+              attachments: [],
+              simulateFailure: $('#simulate').checked,
+            }),
+          });
+          if (!r.ok) {
+            let d = await r.json();
+            throw Error(d.error || 'Request failed');
+          }
+          const reader = r.body.getReader(),
+            decoder = new TextDecoder();
+          let buffer = '',
+            received = false;
+          while (true) {
+            const { done, value } = await reader.read();
+            buffer += decoder.decode(value || new Uint8Array(), { stream: !done });
+            let end;
+            while ((end = buffer.indexOf('\n\n')) !== -1) {
+              const block = buffer.slice(0, end);
+              buffer = buffer.slice(end + 2);
+              const event = block
+                .split('\n')
+                .find((l) => l.startsWith('event: '))
+                ?.slice(7);
+              const line = block.split('\n').find((l) => l.startsWith('data: '));
+              if (!line) continue;
+              const data = JSON.parse(line.slice(6));
+              if (event === 'stage') {
+                $('#status').textContent = titles[data.stage] + '…';
+                document
+                  .querySelectorAll('.stage')
+                  .forEach((n) => n.classList.toggle('current', n.dataset.stage === data.stage));
+              }
+              if (event === 'result') {
+                received = true;
+                render(data);
+              }
+            }
+            if (done) break;
+          }
+          if (!received)
+            throw Error('Connection ended before a result arrived. No result was saved.');
+        } catch (err) {
+          $('#status').textContent = err.message;
+        } finally {
+          $('#submit').disabled = false;
+          $('#switch').disabled = false;
+          document.querySelectorAll('.stage').forEach((n) => n.classList.remove('current'));
+        }
+      };
+      function render(d) {
+        $('#status').textContent =
+          d.status === 'complete' ? 'Your check is ready.' : 'Your check needs attention.';
+        const root = $('#results');
+        root.hidden = false;
+        root.replaceChildren();
+        const card = add(root, 'div', undefined, 'card');
+        add(card, 'div', d.status === 'complete' ? 'YOUR CASE CHECK' : 'PARTIAL CHECK', 'eyebrow');
+        add(
+          card,
+          'h2',
+          d.status === 'budget' ? 'Your checks are paused' : 'Here’s where you stand',
+        );
+        if (d.message) add(card, 'p', d.message, 'warn');
+        for (const w of d.warnings || []) add(card, 'p', w, 'warn');
+        if (d.facts) add(card, 'p', d.facts.summary);
+        const r = d.rules;
+        if (r) {
+          const grid = add(card, 'div', undefined, 'grid');
+          for (const [label, value] of [
+            ['Consumer eligibility', r.eligibility.value ? 'Appears eligible' : 'Likely excluded'],
+            ['Primary commission', r.forum.value || 'Amount needed'],
+            [
+              'Filing fee',
+              r.fee.value
+                ? r.fee.value.min === r.fee.value.max
+                  ? money(r.fee.value.min)
+                  : money(r.fee.value.min) + '–' + money(r.fee.value.max)
+                : 'Amount needed',
+            ],
+          ]) {
+            const m = add(grid, 'div', undefined, 'metric');
+            add(m, 'span', label);
+            add(m, 'strong', value);
+          }
+          const limit = r.limitation.value;
+          add(
+            card,
+            'p',
+            limit.deadline
+              ? 'Limitation deadline: ' +
+                  limit.deadline +
+                  ' · ' +
+                  limit.daysRemaining +
+                  ' days remaining' +
+                  (limit.expired ? ' · Expired; condonation is not automatic.' : '')
+              : 'Limitation: a cause-of-action date is needed.',
+          );
+          if (r.forumConflict.value)
+            add(
+              card,
+              'p',
+              'Jurisdiction conflict: primary basis ' +
+                r.forum.value +
+                '; alternative guide basis ' +
+                r.alternateForum.value +
+                '. Consideration paid is primary.',
+              'warn',
+            );
+          if (r.fee.confidence === 'low') {
+            add(
+              card,
+              'p',
+              'Fee sources conflict. Confirm the applicable fee with the registry before filing.',
+              'warn',
+            );
+            link(card, 'Reported conflicting source', r.feeConflictSource);
+          }
+          const detail = add(card, 'details');
+          add(detail, 'summary', 'Rule basis, figures and sources');
+          for (const key of [
+            'eligibility',
+            'claimA',
+            'claimB',
+            'forum',
+            'fee',
+            'limitation',
+            'territory',
+          ]) {
+            const rule = r[key];
+            const p = add(detail, 'p');
+            add(p, 'strong', key + ': ');
+            add(
+              p,
+              'span',
+              JSON.stringify(rule.value) +
+                ' · ' +
+                rule.basis +
+                ' · Confidence: ' +
+                rule.confidence +
+                ' ',
+            );
+            link(p, 'Source', rule.source_note);
+          }
+          add(card, 'h3', 'Your document checklist', 'section');
+          const ul = add(card, 'ul');
+          for (const c of r.checklist.value) add(ul, 'li', c);
+        }
+        if (d.orders) {
+          add(card, 'h3', 'Similar past orders', 'section');
+          if (d.usedSeed)
+            add(
+              card,
+              'p',
+              'Seed fallback is active. Only reviewed records contribute to statistics; the available sample may be insufficient.',
+              'warn',
+            );
+          if (!d.orders.length)
+            add(card, 'p', 'No verified orders available. No award estimate has been invented.');
+          for (const o of d.orders) {
+            const p = add(card, 'p');
+            link(p, o.caseNumber + ' · ' + o.commission + ' · ' + o.date, o.url);
+            add(p, 'br');
+            add(p, 'span', o.summary + ' · ' + o.outcome.replaceAll('_', ' '));
+          }
+        }
+        if (d.stats) {
+          const s = d.stats;
+          add(card, 'h3', 'Past awards, not predicted awards', 'section');
+          add(card, 'p', 'Verified sample: ' + s.n + ' orders. ' + s.note);
+          if (s.insufficient_data)
+            add(
+              card,
+              'p',
+              'Insufficient data: fewer than three verified orders. No median.',
+              'warn',
+            );
+          add(
+            card,
+            'p',
+            'Compensation median: ' +
+              money(s.compensationMedian) +
+              ' · min ' +
+              money(s.compensationMin) +
+              ' · max ' +
+              money(s.compensationMax),
+          );
+          add(
+            card,
+            'p',
+            'Total award range (excluding interest): ' +
+              (s.totalAwardRange ? s.totalAwardRange.map(money).join('–') : 'Unavailable'),
+          );
+          add(
+            card,
+            'p',
+            'Refund granted rate: ' +
+              (s.refundGrantedRate === null
+                ? 'Unavailable'
+                : (s.refundGrantedRate * 100).toFixed(1) + '%') +
+              ' across ' +
+              s.refundKnownN +
+              ' orders with known refund amounts.',
+          );
+          const dd = add(card, 'details');
+          add(dd, 'summary', 'All award statistics');
+          add(dd, 'pre', JSON.stringify(s, null, 2));
+        }
+        if (d.verdict) {
+          const v = d.verdict;
+          add(card, 'h3', 'Evidence strength: ' + v.strength.replaceAll('_', ' '), 'section');
+          for (const [title, items] of [
+            ['What helps', v.helps],
+            ['What needs work', v.hurts],
+          ]) {
+            add(card, 'strong', title);
+            const ul = add(card, 'ul');
+            items.forEach((t) => add(ul, 'li', t));
+          }
+          add(card, 'h3', 'Next step: ' + v.nextStep.replaceAll('_', ' '));
+          add(card, 'p', v.nextStepReason);
+          add(card, 'h3', 'National Consumer Helpline draft', 'section');
+          add(card, 'p', 'Review the text and fill every placeholder before using it.');
+          add(card, 'div', v.nchDraft, 'draft');
+          const b = add(card, 'button', 'Copy draft');
+          b.onclick = async () => {
+            try {
+              await navigator.clipboard.writeText(v.nchDraft);
+              b.textContent = 'Copied';
+            } catch {
+              b.textContent = 'Select and copy the text above';
+            }
+          };
+          const ul = add(card, 'ul');
+          v.caveats.forEach((t) => add(ul, 'li', t));
+        }
+        const trace = add(card, 'details', undefined, 'section');
+        add(trace, 'summary', 'Gateway trace & budget');
+        add(
+          trace,
+          'p',
+          'Reported run cost: ' +
+            (d.costUsd === undefined ? 'Unavailable' : '$' + d.costUsd.toFixed(6)) +
+            (d.costIncomplete ? ' · Some costs were unreported; total is incomplete.' : ''),
+        );
+        const wrap = add(trace, 'div', undefined, 'tracewrap'),
+          table = add(wrap, 'table'),
+          tr = add(table, 'tr');
+        [
+          'Stage',
+          'Model',
+          'Provider',
+          'Fallback',
+          'Attempts',
+          'Request ID',
+          'Cost USD',
+          'Time',
+        ].forEach((t) => add(tr, 'th', t));
+        for (const t of d.trace || []) {
+          const row = add(table, 'tr');
+          [
+            t.stage,
+            t.model ?? 'Unreported',
+            t.provider ?? 'Unreported',
+            t.fallback === null ? 'Unreported' : String(t.fallback),
+            t.attempts ?? 'Unreported',
+            t.requestId ?? 'Unreported',
+            t.costUsd ?? 'Unreported',
+            t.ms + ' ms',
+          ].forEach((x) => add(row, 'td', String(x)));
+        }
+        add(
+          trace,
+          'p',
+          'End-user budget response (unavailable means not reported by the service):',
+        );
+        add(trace, 'pre', d.budget ? JSON.stringify(d.budget, null, 2) : 'Unavailable');
+        const raw = add(trace, 'details');
+        add(raw, 'summary', 'Response metadata and guardrails');
+        add(raw, 'pre', JSON.stringify(d.trace || [], null, 2));
+        add(card, 'p', d.disclaimer, 'notice');
+      }
+    </script>
+  </body>
+</html>

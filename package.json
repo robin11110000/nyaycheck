@@ -1,1 +1,25 @@
-{"name":"nyaycheck","version":"1.0.0","private":true,"type":"module","engines":{"node":">=20"},"scripts":{"build":"tsc","start":"node dist/src/server.js","test":"npm run build && node --test dist/tests/*.test.js"},"dependencies":{"zod":"^3.24.2"},"devDependencies":{"@types/node":"^22.10.0","typescript":"^5.7.3"}}
+{
+  "name": "nyaycheck",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/server.js",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "format": "prettier --write src tests rules public README.md docs .env.example .prettierrc.json --ignore-unknown",
+    "format:check": "prettier --check src tests rules public README.md docs .env.example .prettierrc.json --ignore-unknown",
+    "verify:live": "npm run build && node dist/src/verify-live.js"
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "prettier": "3.10.0",
+    "typescript": "^5.7.3"
+  }
+}

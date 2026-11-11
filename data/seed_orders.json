@@ -12,8 +12,11 @@
     "costs": null,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:08Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/188026850/",
@@ -28,8 +31,11 @@
     "costs": 5000,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:08Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/85099007/",
@@ -44,8 +50,11 @@
     "costs": null,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:08Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/138959146/",
@@ -60,8 +69,11 @@
     "costs": null,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:08Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/188547247/",
@@ -76,8 +88,11 @@
     "costs": null,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:08Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/130194886/",
@@ -92,8 +107,11 @@
     "costs": null,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:08Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/24935412/",
@@ -108,8 +126,11 @@
     "costs": null,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:08Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/130705935/",
@@ -124,8 +145,11 @@
     "costs": 0,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:08Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/1167982/",
@@ -140,8 +164,11 @@
     "costs": 15000,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:08Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/195640068/",
@@ -156,8 +183,11 @@
     "costs": null,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:08Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/65249739/",
@@ -172,8 +202,11 @@
     "costs": 0,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:08Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/157345584/",
@@ -188,8 +221,11 @@
     "costs": null,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:08Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/132695334/",
@@ -204,8 +240,11 @@
     "costs": null,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:08Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/21786710/",
@@ -220,8 +259,11 @@
     "costs": null,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:08Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/127432760/",
@@ -236,8 +278,11 @@
     "costs": 10000,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:09Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/85822404/",
@@ -252,8 +297,11 @@
     "costs": 25000,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:09Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/146963705/",
@@ -268,8 +316,11 @@
     "costs": 100000,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:09Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/173629696/",
@@ -284,8 +335,11 @@
     "costs": 10000,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:09Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/157393472/",
@@ -300,8 +354,11 @@
     "costs": 50000,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:09Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/39770595/",
@@ -316,8 +373,11 @@
     "costs": 2000,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:09Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/29638637/",
@@ -332,8 +392,11 @@
     "costs": 0,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:09Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/2758014/",
@@ -348,8 +411,11 @@
     "costs": null,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:09Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/87138955/",
@@ -364,8 +430,11 @@
     "costs": null,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:09Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/168625338/",
@@ -380,8 +449,11 @@
     "costs": null,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:09Z",
+    "sourceHttpStatus": 200
   },
   {
     "url": "https://indiankanoon.org/doc/5256621/",
@@ -396,7 +468,10 @@
     "costs": 0,
     "verified": true,
     "reviewed": true,
-    "reviewedAt": "2026-11-12",
-    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run"
+    "reviewedAt": "2026-11-11",
+    "provenance": "offline-reviewed seed; not fetched by the gateway in the current run",
+    "reviewedTimezone": "UTC",
+    "sourceCheckedAt": "2026-11-11T23:34:09Z",
+    "sourceHttpStatus": 200
   }
 ]

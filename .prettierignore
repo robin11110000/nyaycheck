@@ -1,0 +1,5 @@
+node_modules
+dist
+data/seed_orders.json
+package-lock.json
+docs/evidence
