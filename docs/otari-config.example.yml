@@ -1,0 +1,39 @@
+# Merge into your self-hosted Otari config; set real provider credentials there.
+# Confirm these catalog model IDs with GET /api/v1/models on your deployment.
+default_pricing: true
+budgets:
+  nyaycheck-free:
+    max_budget: 0.50
+    reset_alignment: calendar_day
+    rpm_limit: 10
+  nyaycheck-global:
+    max_budget: 10
+    reset_alignment: calendar_day
+api_keys:
+  nyaycheck:
+    secret: ${NYAYCHECK_SERVICE_KEY}
+    user_id: nyaycheck
+    is_service_key: true
+    end_user_budget_ids: [nyaycheck-free]
+    end_user_budget_id: nyaycheck-free
+    ceiling: nyaycheck-global
+routing:
+  policies:
+    nyaycheck-vision:
+      select:
+        - default: together:Qwen/Qwen2.5-VL-72B-Instruct
+      on_failure:
+        - fireworks:accounts/fireworks/models/qwen2p5-vl-32b-instruct
+    nyaycheck-reason:
+      select:
+        - default: groq:llama-3.3-70b-versatile
+      on_failure:
+        - together:meta-llama/Llama-3.3-70B-Instruct-Turbo
+    nyaycheck-failure-demo:
+      select:
+        - default: groq:llama-deliberately-invalid-nyaycheck
+      on_failure:
+        - together:Qwen/Qwen2.5-VL-72B-Instruct
+# Also enable a sandbox and its per-call price, a search provider and its price,
+# web fetch and its price, and a gateway input guardrail profile in the dashboard.
+# Do not deploy this example unchanged; provider/model availability is deployment-specific.
