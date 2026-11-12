@@ -842,9 +842,17 @@
           'End-user budget response (unavailable means not reported by the service):',
         );
         add(trace, 'pre', d.budget ? JSON.stringify(d.budget, null, 2) : 'Unavailable');
+        if (typeof d.budgetRemainingUsd === 'number') {
+          add(trace, 'p', 'Your remaining budget: $' + d.budgetRemainingUsd.toFixed(6));
+        }
         const raw = add(trace, 'details');
         add(raw, 'summary', 'Response metadata and guardrails');
         add(raw, 'pre', JSON.stringify(d.trace || [], null, 2));
+        if (d.toolCalls?.length) {
+          const tools = add(trace, 'details');
+          add(tools, 'summary', 'Gateway search and fetch calls');
+          add(tools, 'pre', JSON.stringify(d.toolCalls, null, 2));
+        }
         add(card, 'p', d.disclaimer, 'notice');
       }
     </script>

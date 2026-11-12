@@ -25,6 +25,7 @@ type Options = {
 };
 export class Otari {
   readonly trace: TraceEvent[] = [];
+  readonly toolCalls: any[] = [];
   costTotal = 0;
   unknownCosts = 0;
   constructor(
@@ -63,13 +64,52 @@ export class Otari {
             ...extra,
           },
           body: body === undefined ? undefined : JSON.stringify(body),
-          signal: AbortSignal.timeout(90000),
+          // A bounded gateway search/fetch loop can include several model turns.
+          signal: AbortSignal.timeout(180000),
         });
         const data = await response.json().catch(() => null);
         const h = response.headers;
         const raw = h.get('Otari-Cost-USD') ?? data?.usage?.cost_usd;
-        const cost =
+        let cost =
           raw !== null && raw !== undefined && Number.isFinite(Number(raw)) ? Number(raw) : null;
+        const requestId = h.get('Otari-Request-ID');
+        // Direct sandbox/search/fetch responses may omit inline usage. Reconcile
+        // against the gateway's settled ledger instead of undercounting the run.
+        if (cost === null && body !== undefined && requestId) {
+          try {
+            const usageResponse = await this.transport(
+              `${base}/usage/requests/${encodeURIComponent(requestId)}`,
+              {
+                headers: { Authorization: `Bearer ${process.env.OTARI_API_KEY}` },
+                signal: AbortSignal.timeout(15000),
+              },
+            );
+            const usage = await usageResponse.json();
+            if (
+              usageResponse.ok &&
+              usage.cost_usd !== undefined &&
+              usage.cost_usd !== null &&
+              Number.isFinite(Number(usage.cost_usd))
+            ) {
+              cost = Number(usage.cost_usd);
+            }
+          } catch {
+            // Preserve null when settlement cannot be read; never assume zero.
+          }
+        }
+        if (Array.isArray(data?.otari_tool_calls)) {
+          this.toolCalls.push(
+            ...data.otari_tool_calls.map((call: any) => ({
+              stage,
+              type: call.type,
+              status: call.status,
+              url: call.url,
+              query: call.query,
+              sources: call.sources,
+              error: call.error,
+            })),
+          );
+        }
         const headers = Object.fromEntries(
           [...h.entries()].filter(([k]) => k.startsWith('otari-') || k === 'server-timing'),
         );
@@ -79,7 +119,7 @@ export class Otari {
           provider: h.get('Otari-Provider'),
           fallback: h.has('Otari-Fallback') ? h.get('Otari-Fallback') === 'true' : null,
           attempts: h.has('Otari-Attempt-Count') ? Number(h.get('Otari-Attempt-Count')) : null,
-          requestId: h.get('Otari-Request-ID'),
+          requestId,
           guardrails: h.get('Otari-Guardrails'),
           costUsd: cost,
           ms: Date.now() - start,
@@ -105,6 +145,19 @@ export class Otari {
         };
       } catch {
         // A network interruption can have incurred cost. Do not assume it was free or replay execution.
+        this.trace.push({
+          stage,
+          model: null,
+          provider: null,
+          fallback: null,
+          attempts: null,
+          requestId: null,
+          guardrails: null,
+          costUsd: null,
+          ms: Date.now() - start,
+          status: 0,
+          headers: {},
+        });
         this.unknownCosts++;
         return {
           ok: false,
@@ -146,12 +199,16 @@ export class Otari {
         user: o.user ?? this.user,
         max_tokens: 4096,
         temperature: 0,
-        response_format: o.jsonSchema
-          ? {
-              type: 'json_schema',
-              json_schema: { name: 'result', strict: true, schema: o.jsonSchema },
-            }
-          : { type: 'json_object' },
+        ...(o.tools?.length
+          ? {}
+          : {
+              response_format: o.jsonSchema
+                ? {
+                    type: 'json_schema',
+                    json_schema: { name: 'result', strict: true, schema: o.jsonSchema },
+                  }
+                : { type: 'json_object' },
+            }),
         ...(guardrails ? { guardrails } : {}),
       },
       o.stage ?? 'extract',

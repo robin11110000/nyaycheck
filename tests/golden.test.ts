@@ -5,6 +5,7 @@ import { readFileSync } from 'node:fs';
 import { constants } from '../rules/constants.js';
 import { Otari } from '../src/otari.js';
 import { check } from '../src/pipeline.js';
+import { search } from '../src/search.js';
 import { FactsSchema, OrderSchema } from '../src/types.js';
 import { redact } from '../src/redact.js';
 import { screen, clean } from '../src/guardrail.js';
@@ -251,4 +252,79 @@ test('gateway guardrail configuration must be a list and is off by default', asy
     if (previous === undefined) delete process.env.OTARI_GUARDRAILS;
     else process.env.OTARI_GUARDRAILS = previous;
   }
+});
+
+test('direct sandbox costs are reconciled from the request ledger', async () => {
+  process.env.OTARI_API_KEY = 'test';
+  const gateway = new Otari('u', 'c', async (url) =>
+    String(url).includes('/usage/requests/')
+      ? new Response(JSON.stringify({ cost_usd: '0.010000' }))
+      : new Response(JSON.stringify({ return_code: 0, stdout: '{}' }), {
+          headers: { 'Otari-Request-ID': 'sandbox-id' },
+        }),
+  );
+  await gateway.execute({ code: 'print(1)' });
+  assert.equal(gateway.costTotal, 0.01);
+  assert.equal(gateway.unknownCosts, 0);
+  assert.equal(gateway.trace[0].costUsd, 0.01);
+});
+
+test('network interruptions remain visible as unsettled stage traces', async () => {
+  process.env.OTARI_API_KEY = 'test';
+  const gateway = new Otari('u', 'c', async () => {
+    throw new Error('network');
+  });
+  const result = await gateway.chat({ model: 'qwen', messages: [], stage: 'search' });
+  assert.equal(result.ok, false);
+  assert.equal(gateway.trace[0].stage, 'search');
+  assert.equal(gateway.trace[0].status, 0);
+  assert.equal(gateway.trace[0].costUsd, null);
+  assert.equal(gateway.unknownCosts, 1);
+});
+
+test('built-in search accepts only orders both retrieved and fetched by the gateway', async () => {
+  process.env.OTARI_API_KEY = 'test';
+  const validUrl = 'https://example.com/consumer-order';
+  const order = {
+    url: validUrl,
+    commission: 'District',
+    caseNumber: 'CC/1/2020',
+    date: '2020-01-01',
+    category: 'manufacturer',
+    summary: 'Defect dispute',
+    outcome: 'partly_allowed',
+    refund: 100,
+    compensation: 50,
+    costs: 10,
+    verified: false,
+  };
+  const gateway = new Otari('u', 'c', async (url, init) => {
+    if (String(url).endsWith('/search')) return new Response('{}', { status: 400 });
+    const body = JSON.parse(String(init?.body));
+    assert.equal('response_format' in body, false);
+    return new Response(
+      JSON.stringify({
+        choices: [
+          {
+            message: {
+              content: JSON.stringify({
+                orders: [order, { ...order, url: 'https://example.com/invented' }],
+              }),
+            },
+          },
+        ],
+        usage: { cost_usd: '0.01' },
+        otari_tool_calls: [
+          { type: 'web_search', status: 'completed', sources: [{ url: validUrl }] },
+          { type: 'web_fetch', status: 'completed', url: validUrl },
+        ],
+      }),
+    );
+  });
+  const result = await search(gateway, facts);
+  assert.ok(result.orders.some((item) => item.url === validUrl));
+  assert.equal(
+    result.orders.some((item) => item.url.includes('/invented')),
+    false,
+  );
 });

@@ -11,9 +11,9 @@ The app was built with Otari from the start. That first commit includes the gate
 
 ## Feature claims
 
-A live end-to-end run is still pending the Otari service key. Until a live evidence report exists, do not submit the implemented capabilities as a list of live-confirmed features.
+Real case evidence is available in `LIVE_RESULTS.md` and `evidence/`. Confirmed features: gateway calls to open-weight models, Python code execution, built-in web search, per-user and key budgets, conversation attribution, request metadata and cost accounting. Indian legal-page fetching is blocked upstream and the reviewed seed fallback is used.
 
-The implementation covers gateway model calls, routing/fallback, Python code execution, web search/fetch, end-user and key budgets, request tracing, costs and conversation grouping. Confirm each against the real trace before including it in the form.
+Routing policies and backups are configured, but forced fallback has not been demonstrated. Built-in fetch executed successfully on other public pages; Indian Kanoon fetches returned HTTP 403. Do not describe the final case as using live-retrieved Indian orders.
 
 Gateway guardrails are excluded from feature claims. Local phrase screening is application code.
 
@@ -25,4 +25,4 @@ The report is prepared in `OTARI_FEEDBACK.md`, but has **not been posted**: the 
 
 ## Video
 
-No live demo video has been recorded. Use `DEMO.md` after `npm run verify:live` passes, and show real trace metadata and sandbox output.
+No live demo video has been recorded. Use `DEMO.md` using the observed live behavior and clearly showing seed fallback, and show real trace metadata and sandbox output.

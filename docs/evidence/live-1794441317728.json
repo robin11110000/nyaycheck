@@ -1,0 +1,432 @@
+{
+  "verifiedAt": "2026-11-11T23:55:17.726Z",
+  "mode": "live",
+  "syntheticCase": true,
+  "openapiVersion": "0.44.0+0925283",
+  "endpointChecks": [
+    "/chat/completions",
+    "/code/execute",
+    "/search",
+    "/fetch",
+    "/key/budget"
+  ],
+  "result": {
+    "status": "complete",
+    "facts": {
+      "purchaseType": "goods",
+      "purpose": "personal",
+      "amountPaidInr": 62000,
+      "compensationSoughtInr": 10000,
+      "purchaseDate": "2026-11-12",
+      "causeOfActionDate": "2026-11-12",
+      "oppositeParty": {
+        "name": null,
+        "type": "ecommerce"
+      },
+      "category": "electronics",
+      "complainantCity": null,
+      "evidenceMentioned": [
+        "invoice",
+        "delivery confirmation",
+        "photos"
+      ],
+      "alreadyEscalated": {
+        "grievanceOfficer": true,
+        "nch": false,
+        "legalNotice": false
+      },
+      "summary": "A defective phone was purchased for personal use. The complainant seeks a refund and compensation after the seller's grievance officer denied a refund."
+    },
+    "rules": {
+      "eligibility": {
+        "value": true,
+        "basis": "Section 2(7): commercial/resale excluded; self-employment livelihood exception included. Purpose requires factual review.",
+        "source_note": "https://www.indiacode.nic.in/handle/123456789/15256",
+        "confidence": "high"
+      },
+      "limitation": {
+        "value": {
+          "deadline": "2028-11-12",
+          "daysRemaining": 731,
+          "expired": false
+        },
+        "basis": "Section 69: two calendar years from stated cause of action. Delay condonation requires sufficient cause; recurring causes and date computation need advocate review.",
+        "source_note": "https://www.indiacode.nic.in/handle/123456789/15256",
+        "confidence": "high"
+      },
+      "claimA": {
+        "value": 62000,
+        "basis": "Consideration actually paid; primary jurisdiction basis.",
+        "source_note": "https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf",
+        "confidence": "high"
+      },
+      "claimB": {
+        "value": 72000,
+        "basis": "Comparison only: paid plus requested compensation. Interest omitted because no rate or period was supplied. This is not the governing jurisdiction test.",
+        "source_note": "https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf",
+        "confidence": "low"
+      },
+      "forum": {
+        "value": "District",
+        "basis": "2021 jurisdiction rules, effective 30 December 2021. District <= 50 lakh; State <= 2 crore; National above.",
+        "source_note": "https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf",
+        "confidence": "high"
+      },
+      "alternateForum": {
+        "value": "District",
+        "basis": "Non-primary guide comparison; excludes unspecified interest.",
+        "source_note": "https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf",
+        "confidence": "low"
+      },
+      "forumConflict": {
+        "value": false,
+        "basis": "Compare primary and alternate basis.",
+        "source_note": "https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf",
+        "confidence": "high"
+      },
+      "fee": {
+        "value": {
+          "min": 0,
+          "max": 0
+        },
+        "basis": "INR; above 20–50 lakh a reported 500/1000 conflict requires registry confirmation. Higher bands use published fee schedule; confirm before filing.",
+        "source_note": "https://egazette.gov.in/WriteReadData/2023/248158.pdf",
+        "confidence": "high"
+      },
+      "feeConflictSource": "https://niyam.ai/blog/file-consumer-complaint-edaakhil",
+      "territory": {
+        "value": "Where the complainant resides or personally works for gain; confirm the relevant commission.",
+        "basis": "Sections 34(2), 47(4), 58 as applicable.",
+        "source_note": "https://www.indiacode.nic.in/handle/123456789/15256",
+        "confidence": "high"
+      },
+      "checklist": {
+        "value": [
+          "Invoice or receipt",
+          "Chronology and correspondence",
+          "Proof of payment",
+          "Identity and address proof (submit only to the appropriate authority)",
+          "Order confirmation",
+          "Delivery and return records",
+          "Seller correspondence"
+        ],
+        "basis": "Practical category checklist; commission may require more.",
+        "source_note": "https://www.indiacode.nic.in/handle/123456789/15256",
+        "confidence": "high"
+      },
+      "asOf": "2026-11-12"
+    },
+    "orders": [
+      {
+        "url": "https://indiankanoon.org/doc/176347235/",
+        "commission": "NCDRC",
+        "caseNumber": "CC 930/2017",
+        "date": "2021-09-22",
+        "category": "ecommerce",
+        "summary": "Mobile return-policy complaint dismissed for pecuniary jurisdiction, without a merits finding.",
+        "outcome": "dismissed",
+        "refund": null,
+        "compensation": null,
+        "costs": null,
+        "verified": true,
+        "reviewed": true
+      },
+      {
+        "url": "https://indiankanoon.org/doc/188026850/",
+        "commission": "Punjab SCDRC",
+        "caseNumber": "FA 1004/2022",
+        "date": "2024-02-20",
+        "category": "ecommerce",
+        "summary": "Wrong item delivered. Consumer relief upheld on seller appeal: product delivery plus compensation and litigation costs. Legal-aid penalty excluded.",
+        "outcome": "partly_allowed",
+        "refund": 0,
+        "compensation": 5000,
+        "costs": 5000,
+        "verified": true,
+        "reviewed": true
+      },
+      {
+        "url": "https://indiankanoon.org/doc/85099007/",
+        "commission": "Haryana SCDRC",
+        "caseNumber": "SC/6/FA/511/2025",
+        "date": "2026-06-09",
+        "category": "ecommerce",
+        "summary": "Old damaged laptop delivered; final order directs payment of the agreed decretal sum. Components follow the stated refund and compensation; no separate cost inferred.",
+        "outcome": "partly_allowed",
+        "refund": 27190,
+        "compensation": 2200,
+        "costs": null,
+        "verified": true,
+        "reviewed": true
+      },
+      {
+        "url": "https://indiankanoon.org/doc/138959146/",
+        "commission": "Haryana SCDRC",
+        "caseNumber": "FA 595/2016",
+        "date": "2016-07-29",
+        "category": "ecommerce",
+        "summary": "Territorial-jurisdiction dismissal set aside and complaint remanded. No final substantive award.",
+        "outcome": "unclear",
+        "refund": null,
+        "compensation": null,
+        "costs": null,
+        "verified": true,
+        "reviewed": true
+      }
+    ],
+    "usedSeed": true,
+    "stats": {
+      "n": 4,
+      "counts": {
+        "allowed": 0,
+        "partly_allowed": 2,
+        "dismissed": 1,
+        "unclear": 1
+      },
+      "insufficient_data": false,
+      "refundKnownN": 2,
+      "refundGrantedRate": 0.5,
+      "compensationN": 2,
+      "compensationMin": 2200,
+      "compensationMedian": null,
+      "compensationMax": 5000,
+      "totalAwardRange": [
+        10000,
+        10000
+      ],
+      "awardToClaimRange": [
+        0.16129032258064516,
+        0.16129032258064516
+      ],
+      "note": "Descriptive sample only. Missing values are excluded, never treated as zero. Interest excluded. Not a prediction."
+    },
+    "verdict": {
+      "strength": "moderate",
+      "helps": [
+        "invoice",
+        "delivery confirmation",
+        "photos",
+        "evidence of payment"
+      ],
+      "hurts": [
+        "lack of clear communication with the seller",
+        "no prior legal notice"
+      ],
+      "nextStep": "nch",
+      "nextStepReason": "The complainant has already escalated the issue to the grievance officer and been denied a refund. The next step would be to file a complaint with the National Consumer Helpline (NCH) or the appropriate consumer commission.",
+      "nchDraft": "To, the National Consumer Helpline, I, {complainant name}, purchased a {product name} from {seller name} on {date of purchase} for personal use. The product was defective. I have already contacted the seller's grievance officer, who denied my refund request. I am seeking a refund of {amount paid} and compensation of {compensation sought}. I have attached the following documents: invoice, delivery confirmation, and photos of the defective product.",
+      "caveats": [
+        "ensure all evidence is attached and documentation is complete",
+        "be prepared to provide additional information or clarification as needed",
+        "review and understand the consumer protection laws and regulations"
+      ]
+    },
+    "warnings": [
+      "Otari request failed (400).",
+      "Otari request failed (400).",
+      "Fewer than three live orders were verified. Using only reviewed, category-matched seed orders where available; otherwise statistics remain insufficient."
+    ],
+    "trace": [
+      {
+        "stage": "assemble",
+        "model": null,
+        "provider": null,
+        "fallback": null,
+        "attempts": null,
+        "requestId": null,
+        "guardrails": null,
+        "costUsd": null,
+        "ms": 8704,
+        "status": 200,
+        "headers": {}
+      },
+      {
+        "stage": "assemble",
+        "model": null,
+        "provider": null,
+        "fallback": null,
+        "attempts": null,
+        "requestId": null,
+        "guardrails": null,
+        "costUsd": null,
+        "ms": 971,
+        "status": 200,
+        "headers": {}
+      },
+      {
+        "stage": "extract",
+        "model": "Qwen2.5-VL-72B-Instruct",
+        "provider": "ovhcloud",
+        "fallback": false,
+        "attempts": 1,
+        "requestId": "36481540-32fc-4a9b-970f-9d752cb7af22",
+        "guardrails": null,
+        "costUsd": 0.000534,
+        "ms": 6330,
+        "status": 200,
+        "headers": {
+          "otari-attempt-count": "1",
+          "otari-end-user-budget": "42787196-dc69-42cf-8f1c-9da00860a9c6",
+          "otari-fallback": "false",
+          "otari-model": "Qwen2.5-VL-72B-Instruct",
+          "otari-provider": "ovhcloud",
+          "otari-request-id": "36481540-32fc-4a9b-970f-9d752cb7af22",
+          "otari-response-duration-ms": "6032",
+          "server-timing": "otari;dur=201.6;desc=\"Otari before the provider\", upstream;dur=5830.3;desc=\"Provider until its answer or first chunk\", total;dur=6031.9;desc=\"Otari and the provider\""
+        }
+      },
+      {
+        "stage": "rules",
+        "model": null,
+        "provider": null,
+        "fallback": null,
+        "attempts": null,
+        "requestId": "3df86d5f-f0e3-4679-9bbb-cc0e6af9ac36",
+        "guardrails": null,
+        "costUsd": null,
+        "ms": 1128,
+        "status": 200,
+        "headers": {
+          "otari-end-user-budget": "42787196-dc69-42cf-8f1c-9da00860a9c6",
+          "otari-request-id": "3df86d5f-f0e3-4679-9bbb-cc0e6af9ac36"
+        }
+      },
+      {
+        "stage": "search",
+        "model": null,
+        "provider": null,
+        "fallback": null,
+        "attempts": null,
+        "requestId": "82447a5e-5109-44cc-977a-0521d507c0db",
+        "guardrails": null,
+        "costUsd": null,
+        "ms": 1006,
+        "status": 400,
+        "headers": {
+          "otari-request-id": "82447a5e-5109-44cc-977a-0521d507c0db"
+        }
+      },
+      {
+        "stage": "search",
+        "model": null,
+        "provider": null,
+        "fallback": null,
+        "attempts": null,
+        "requestId": "fb8396b9-a47a-4a9d-ad87-1aced84498e5",
+        "guardrails": null,
+        "costUsd": null,
+        "ms": 338,
+        "status": 400,
+        "headers": {
+          "otari-request-id": "fb8396b9-a47a-4a9d-ad87-1aced84498e5"
+        }
+      },
+      {
+        "stage": "award",
+        "model": null,
+        "provider": null,
+        "fallback": null,
+        "attempts": null,
+        "requestId": "236ae447-8fe6-4376-b46b-9c0e3f71f407",
+        "guardrails": null,
+        "costUsd": null,
+        "ms": 1688,
+        "status": 200,
+        "headers": {
+          "otari-end-user-budget": "42787196-dc69-42cf-8f1c-9da00860a9c6",
+          "otari-request-id": "236ae447-8fe6-4376-b46b-9c0e3f71f407"
+        }
+      },
+      {
+        "stage": "verdict",
+        "model": "Meta-Llama-3_3-70B-Instruct",
+        "provider": "ovhcloud",
+        "fallback": false,
+        "attempts": 1,
+        "requestId": "e2212c45-1e6a-4796-9e15-23be1f51cf23",
+        "guardrails": null,
+        "costUsd": 0.001357,
+        "ms": 6729,
+        "status": 200,
+        "headers": {
+          "otari-attempt-count": "1",
+          "otari-end-user-budget": "42787196-dc69-42cf-8f1c-9da00860a9c6",
+          "otari-fallback": "false",
+          "otari-model": "Meta-Llama-3_3-70B-Instruct",
+          "otari-provider": "ovhcloud",
+          "otari-request-id": "e2212c45-1e6a-4796-9e15-23be1f51cf23",
+          "otari-response-duration-ms": "6406",
+          "server-timing": "otari;dur=74.3;desc=\"Otari before the provider\", upstream;dur=6331.9;desc=\"Provider until its answer or first chunk\", total;dur=6406.2;desc=\"Otari and the provider\""
+        }
+      },
+      {
+        "stage": "assemble",
+        "model": null,
+        "provider": null,
+        "fallback": null,
+        "attempts": null,
+        "requestId": null,
+        "guardrails": null,
+        "costUsd": null,
+        "ms": 936,
+        "status": 200,
+        "headers": {}
+      }
+    ],
+    "costUsd": 0.0018909999999999999,
+    "costIncomplete": true,
+    "budget": [
+      {
+        "user_id": "eu_b8621a52f8db4ad6a89b691b1ea37ccc",
+        "external_id": "demo-61d6d6bd-b77b-4212-bcd8-835835fbbdc4",
+        "owner_user_id": "svc_a4135d1a6b1645ddb18f99b84fe23f61",
+        "budget_id": "42787196-dc69-42cf-8f1c-9da00860a9c6",
+        "blocked": false,
+        "spend": 0.021891,
+        "reserved": 0,
+        "current_tokens": 2363,
+        "current_requests": 4,
+        "budget_started_at": "2026-11-11T00:00:00+00:00",
+        "next_budget_reset_at": "2026-11-12T00:00:00+00:00",
+        "created_at": "2026-11-11T23:55:00.144180+00:00"
+      }
+    ],
+    "disclaimer": "Not legal advice. An advocate should review anything significant. Figures reflect past orders and are not predictions."
+  },
+  "sandbox": [
+    {
+      "status": 200,
+      "requestId": "3df86d5f-f0e3-4679-9bbb-cc0e6af9ac36",
+      "stdout": "{\"eligibility\": {\"value\": true, \"basis\": \"Section 2(7): commercial/resale excluded; self-employment livelihood exception included. Purpose requires factual review.\", \"source_note\": \"https://www.indiacode.nic.in/handle/123456789/15256\", \"confidence\": \"high\"}, \"limitation\": {\"value\": {\"deadline\": \"2028-11-12\", \"daysRemaining\": 731, \"expired\": false}, \"basis\": \"Section 69: two calendar years from stated cause of action. Delay condonation requires sufficient cause; recurring causes and date computation need advocate review.\", \"source_note\": \"https://www.indiacode.nic.in/handle/123456789/15256\", \"confidence\": \"high\"}, \"claimA\": {\"value\": 62000.0, \"basis\": \"Consideration actually paid; primary jurisdiction basis.\", \"source_note\": \"https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf\", \"confidence\": \"high\"}, \"claimB\": {\"value\": 72000.0, \"basis\": \"Comparison only: paid plus requested compensation. Interest omitted because no rate or period was supplied. This is not the governing jurisdiction test.\", \"source_note\": \"https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf\", \"confidence\": \"low\"}, \"forum\": {\"value\": \"District\", \"basis\": \"2021 jurisdiction rules, effective 30 December 2021. District <= 50 lakh; State <= 2 crore; National above.\", \"source_note\": \"https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf\", \"confidence\": \"high\"}, \"alternateForum\": {\"value\": \"District\", \"basis\": \"Non-primary guide comparison; excludes unspecified interest.\", \"source_note\": \"https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf\", \"confidence\": \"low\"}, \"forumConflict\": {\"value\": false, \"basis\": \"Compare primary and alternate basis.\", \"source_note\": \"https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf\", \"confidence\": \"high\"}, \"fee\": {\"value\": {\"min\": 0, \"max\": 0}, \"basis\": \"INR; above 20\\u201350 lakh a reported 500/1000 conflict requires registry confirmation. Higher bands use published fee schedule; confirm before filing.\", \"source_note\": \"https://egazette.gov.in/WriteReadData/2023/248158.pdf\", \"confidence\": \"high\"}, \"feeConflictSource\": \"https://niyam.ai/blog/file-consumer-complaint-edaakhil\", \"territory\": {\"value\": \"Where the complainant resides or personally works for gain; confirm the relevant commission.\", \"basis\": \"Sections 34(2), 47(4), 58 as applicable.\", \"source_note\": \"https://www.indiacode.nic.in/handle/123456789/15256\", \"confidence\": \"high\"}, \"checklist\": {\"value\": [\"Invoice or receipt\", \"Chronology and correspondence\", \"Proof of payment\", \"Identity and address proof (submit only to the appropriate authority)\", \"Order confirmation\", \"Delivery and return records\", \"Seller correspondence\"], \"basis\": \"Practical category checklist; commission may require more.\", \"source_note\": \"https://www.indiacode.nic.in/handle/123456789/15256\", \"confidence\": \"high\"}, \"asOf\": \"2026-11-12\"}\n",
+      "stderr": "",
+      "returnCode": 0
+    },
+    {
+      "status": 200,
+      "requestId": "236ae447-8fe6-4376-b46b-9c0e3f71f407",
+      "stdout": "{\"n\": 4, \"counts\": {\"allowed\": 0, \"partly_allowed\": 2, \"dismissed\": 1, \"unclear\": 1}, \"insufficient_data\": false, \"refundKnownN\": 2, \"refundGrantedRate\": 0.5, \"compensationN\": 2, \"compensationMin\": 2200.0, \"compensationMedian\": null, \"compensationMax\": 5000.0, \"totalAwardRange\": [10000.0, 10000.0], \"awardToClaimRange\": [0.16129032258064516, 0.16129032258064516], \"note\": \"Descriptive sample only. Missing values are excluded, never treated as zero. Interest excluded. Not a prediction.\"}\n",
+      "stderr": "",
+      "returnCode": 0
+    }
+  ],
+  "webTools": [
+    {
+      "path": "/api/v1/search",
+      "status": 400
+    },
+    {
+      "path": "/api/v1/search",
+      "status": 400
+    }
+  ],
+  "checks": {
+    "completeCase": true,
+    "requestHeadersPresent": true,
+    "sandboxCompleted": true,
+    "costReported": true,
+    "searchSucceeded": false,
+    "fetchSucceeded": false,
+    "fallbackReported": false,
+    "gatewayGuardrails": "Not claimed; requires an evaluated verdict from a configured profile."
+  }
+}

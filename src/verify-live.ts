@@ -34,7 +34,11 @@ async function main() {
     return response;
   };
 
-  const gateway = new Otari(`demo-${randomUUID()}`, randomUUID(), transport);
+  const gateway = new Otari(
+    process.env.OTARI_DEMO_USER || 'nyaycheck-live-demo',
+    randomUUID(),
+    transport,
+  );
   const spec = await gateway.request('/openapi.json', undefined);
   if (!spec.ok || !spec.data?.paths) {
     throw new Error(
@@ -75,6 +79,7 @@ async function main() {
     result,
     sandbox,
     webTools,
+    builtInToolCalls: gateway.toolCalls,
     checks: {
       completeCase: result.status === 'complete',
       requestHeadersPresent: gateway.trace.some(
@@ -82,10 +87,12 @@ async function main() {
       ),
       sandboxCompleted: sandbox.length >= 2 && sandbox.every((item: any) => item.returnCode === 0),
       costReported: gateway.trace.some((event) => event.costUsd !== null),
-      searchSucceeded: webTools.some(
-        (tool) => tool.path.endsWith('/search') && tool.status === 200,
-      ),
-      fetchSucceeded: webTools.some((tool) => tool.path.endsWith('/fetch') && tool.status === 200),
+      searchSucceeded:
+        webTools.some((tool) => tool.path.endsWith('/search') && tool.status === 200) ||
+        gateway.toolCalls.some((tool) => tool.type === 'web_search' && tool.status === 'completed'),
+      fetchSucceeded:
+        webTools.some((tool) => tool.path.endsWith('/fetch') && tool.status === 200) ||
+        gateway.toolCalls.some((tool) => tool.type === 'web_fetch' && tool.status === 'completed'),
       fallbackReported: gateway.trace.some((event) => event.fallback === true),
       gatewayGuardrails: 'Not claimed; requires an evaluated verdict from a configured profile.',
     },

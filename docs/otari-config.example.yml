@@ -21,19 +21,19 @@ routing:
   policies:
     nyaycheck-vision:
       select:
-        - default: together:Qwen/Qwen2.5-VL-72B-Instruct
+        - default: ovhcloud:Qwen2.5-VL-72B-Instruct
       on_failure:
-        - fireworks:accounts/fireworks/models/qwen2p5-vl-32b-instruct
+        - ovhcloud:Meta-Llama-3_3-70B-Instruct
     nyaycheck-reason:
       select:
-        - default: groq:llama-3.3-70b-versatile
+        - default: ovhcloud:Meta-Llama-3_3-70B-Instruct
       on_failure:
-        - together:meta-llama/Llama-3.3-70B-Instruct-Turbo
+        - ovhcloud:Qwen2.5-VL-72B-Instruct
     nyaycheck-failure-demo:
       select:
         - default: groq:llama-deliberately-invalid-nyaycheck
       on_failure:
-        - together:Qwen/Qwen2.5-VL-72B-Instruct
+        - ovhcloud:Qwen2.5-VL-72B-Instruct
 # Also enable a sandbox and its per-call price, a search provider and its price,
 # web fetch and its price, and a gateway input guardrail profile in the dashboard.
 # Do not deploy this example unchanged; provider/model availability is deployment-specific.

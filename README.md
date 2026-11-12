@@ -46,7 +46,7 @@ The automated suite covers ten fixed legal-rule scenarios, boundary dates, missi
 
 `verify:live` uses the real gateway and a fictional phone-purchase case. It first reads the deployment's OpenAPI document, then saves actual response headers, sandbox output and reported costs under `docs/evidence/`. It exits unsuccessfully if required evidence is missing. It does not print or save the API key.
 
-**Live status:** awaiting a service key. No successful live run or demo video is claimed yet. Follow [the recording guide](docs/DEMO.md) after the live check passes.
+**Live status:** a real fictional case completed on Otari `0.44.0+0925283`. Model headers, both Python sandbox outputs, search results, per-user budgets and run costs were captured. Indian Kanoon returned HTTP 403 to the gateway fetcher, so that run used reviewed seed orders. The strict live check remains unsuccessful when no legal page can be fetched. No video recording has been produced. See [live results](docs/LIVE_RESULTS.md) and [the recording guide](docs/DEMO.md).
 
 ## How the application works
 
@@ -61,16 +61,16 @@ The server streams progress over SSE. Failed stages produce partial results. If 
 
 ## Otari integration
 
-| Capability                | Implementation                                     | Evidence to check during the live run                           |
-| ------------------------- | -------------------------------------------------- | --------------------------------------------------------------- |
-| Model gateway and routing | `src/otari.ts`, `src/extract.ts`, `src/verdict.ts` | `/chat/completions`; actual model/provider headers              |
-| Provider fallback         | Routing policy and failure-demo control            | `Otari-Fallback`, `Otari-Attempt-Count`                         |
-| Python sandbox            | `src/rules.ts`, `src/award.ts`, `python/`          | `/code/execute`; successful return code and stdout              |
-| Web search and fetch      | `src/search.ts`                                    | `/search`, `/fetch`; gateway-returned source URLs and page text |
-| End-user budgets          | `src/pipeline.ts`, `src/otari.ts`                  | `user`, `Otari-End-User-Budget`, `/end-users`                   |
-| Key budget checks         | `src/pipeline.ts`                                  | `/key/budget` before a case starts                              |
-| Costs and traces          | `src/otari.ts`, result panel                       | `usage.cost_usd`, request ID and routing metadata               |
-| Conversation grouping     | `src/server.ts`                                    | One `Otari-Conversation-Id` for each case                       |
+| Capability                | Implementation                                     | Evidence to check during the live run                                       |
+| ------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------- |
+| Model gateway and routing | `src/otari.ts`, `src/extract.ts`, `src/verdict.ts` | `/chat/completions`; actual model/provider headers                          |
+| Provider fallback         | Routing policy and failure-demo control            | `Otari-Fallback`, `Otari-Attempt-Count`                                     |
+| Python sandbox            | `src/rules.ts`, `src/award.ts`, `python/`          | `/code/execute`; successful return code and stdout                          |
+| Web search and fetch      | `src/search.ts`                                    | `/search`, `/fetch`; gateway-returned source URLs and page text             |
+| End-user budgets          | `src/pipeline.ts`, `src/otari.ts`                  | `user`, `Otari-End-User-Budget`, `/end-users`                               |
+| Key budget checks         | `src/pipeline.ts`                                  | `/key/budget` before a case starts                                          |
+| Costs and traces          | `src/otari.ts`, result panel                       | `usage.cost_usd` or `/usage/requests/{id}`, request ID and routing metadata |
+| Conversation grouping     | `src/server.ts`                                    | One `Otari-Conversation-Id` for each case                                   |
 
 These are implemented paths, not a claim that every feature has passed live verification. Missing cost values stay unknown and mark the total incomplete. The local phrase screen, JSON validation and PII pattern redaction are application code, not Otari guardrails.
 
@@ -78,7 +78,7 @@ These are implemented paths, not a claim that every feature has passed live veri
 
 The fallback corpus contains 25 source-linked decisions across electronics, e-commerce, airlines, insurance and builders. All links were rechecked on **11 November 2026 UTC**. The machine-readable timestamps include `Z` explicitly; the same checks occurred on 12 November in Asia/Kolkata. [Source notes](docs/SOURCE_CHECKS.md) record three summary spot checks.
 
-Live orders must come from pages Otari actually fetched. If fewer than three are available, category-matched reviewed seed orders supplement the sample and the card identifies the fallback. Seed provenance is offline source review, not a gateway fetch in the current case.
+Live orders must come from pages Otari actually fetched. Hosted runs use the built-in `otari_web_search` and `otari_web_fetch` declarations (`OTARI_SEARCH_MODE=builtin`); direct endpoints remain an optional route for deployments with configured direct search tools. If fewer than three are available, category-matched reviewed seed orders supplement the sample and the card identifies the fallback. Seed provenance is offline source review, not a gateway fetch in the current case.
 
 The sample is curated and nonrepresentative. It includes older-law decisions and procedural orders. Remands and ambiguous components remain unknown. Missing awards are not treated as zero, uncomputed interest is excluded, and a compensation median requires at least three known compensation amounts. Provider appeals are interpreted by the consumer relief left in force.
 

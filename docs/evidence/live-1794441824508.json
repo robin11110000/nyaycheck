@@ -1,0 +1,730 @@
+{
+  "verifiedAt": "2026-11-12T00:03:44.507Z",
+  "mode": "live",
+  "syntheticCase": true,
+  "openapiVersion": "0.44.0+0925283",
+  "endpointChecks": [
+    "/chat/completions",
+    "/code/execute",
+    "/search",
+    "/fetch",
+    "/key/budget"
+  ],
+  "result": {
+    "status": "complete",
+    "facts": {
+      "purchaseType": "goods",
+      "purpose": "personal",
+      "amountPaidInr": 62000,
+      "compensationSoughtInr": 10000,
+      "purchaseDate": "2026-11-12",
+      "causeOfActionDate": "2026-11-12",
+      "oppositeParty": {
+        "name": null,
+        "type": "ecommerce"
+      },
+      "category": "electronics",
+      "complainantCity": null,
+      "evidenceMentioned": [
+        "invoice",
+        "delivery confirmation",
+        "photos"
+      ],
+      "alreadyEscalated": {
+        "grievanceOfficer": true,
+        "nch": false,
+        "legalNotice": false
+      },
+      "summary": "A defective phone was purchased for personal use. The buyer seeks a refund and compensation after the grievance officer denied a refund."
+    },
+    "rules": {
+      "eligibility": {
+        "value": true,
+        "basis": "Section 2(7): commercial/resale excluded; self-employment livelihood exception included. Purpose requires factual review.",
+        "source_note": "https://www.indiacode.nic.in/handle/123456789/15256",
+        "confidence": "high"
+      },
+      "limitation": {
+        "value": {
+          "deadline": "2028-11-12",
+          "daysRemaining": 731,
+          "expired": false
+        },
+        "basis": "Section 69: two calendar years from stated cause of action. Delay condonation requires sufficient cause; recurring causes and date computation need advocate review.",
+        "source_note": "https://www.indiacode.nic.in/handle/123456789/15256",
+        "confidence": "high"
+      },
+      "claimA": {
+        "value": 62000,
+        "basis": "Consideration actually paid; primary jurisdiction basis.",
+        "source_note": "https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf",
+        "confidence": "high"
+      },
+      "claimB": {
+        "value": 72000,
+        "basis": "Comparison only: paid plus requested compensation. Interest omitted because no rate or period was supplied. This is not the governing jurisdiction test.",
+        "source_note": "https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf",
+        "confidence": "low"
+      },
+      "forum": {
+        "value": "District",
+        "basis": "2021 jurisdiction rules, effective 30 December 2021. District <= 50 lakh; State <= 2 crore; National above.",
+        "source_note": "https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf",
+        "confidence": "high"
+      },
+      "alternateForum": {
+        "value": "District",
+        "basis": "Non-primary guide comparison; excludes unspecified interest.",
+        "source_note": "https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf",
+        "confidence": "low"
+      },
+      "forumConflict": {
+        "value": false,
+        "basis": "Compare primary and alternate basis.",
+        "source_note": "https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf",
+        "confidence": "high"
+      },
+      "fee": {
+        "value": {
+          "min": 0,
+          "max": 0
+        },
+        "basis": "INR; above 20–50 lakh a reported 500/1000 conflict requires registry confirmation. Higher bands use published fee schedule; confirm before filing.",
+        "source_note": "https://egazette.gov.in/WriteReadData/2023/248158.pdf",
+        "confidence": "high"
+      },
+      "feeConflictSource": "https://niyam.ai/blog/file-consumer-complaint-edaakhil",
+      "territory": {
+        "value": "Where the complainant resides or personally works for gain; confirm the relevant commission.",
+        "basis": "Sections 34(2), 47(4), 58 as applicable.",
+        "source_note": "https://www.indiacode.nic.in/handle/123456789/15256",
+        "confidence": "high"
+      },
+      "checklist": {
+        "value": [
+          "Invoice or receipt",
+          "Chronology and correspondence",
+          "Proof of payment",
+          "Identity and address proof (submit only to the appropriate authority)",
+          "Order confirmation",
+          "Delivery and return records",
+          "Seller correspondence"
+        ],
+        "basis": "Practical category checklist; commission may require more.",
+        "source_note": "https://www.indiacode.nic.in/handle/123456789/15256",
+        "confidence": "high"
+      },
+      "asOf": "2026-11-12"
+    },
+    "orders": [
+      {
+        "url": "https://indiankanoon.org/doc/176347235/",
+        "commission": "NCDRC",
+        "caseNumber": "CC 930/2017",
+        "date": "2021-09-22",
+        "category": "ecommerce",
+        "summary": "Mobile return-policy complaint dismissed for pecuniary jurisdiction, without a merits finding.",
+        "outcome": "dismissed",
+        "refund": null,
+        "compensation": null,
+        "costs": null,
+        "verified": true,
+        "reviewed": true
+      },
+      {
+        "url": "https://indiankanoon.org/doc/188026850/",
+        "commission": "Punjab SCDRC",
+        "caseNumber": "FA 1004/2022",
+        "date": "2024-02-20",
+        "category": "ecommerce",
+        "summary": "Wrong item delivered. Consumer relief upheld on seller appeal: product delivery plus compensation and litigation costs. Legal-aid penalty excluded.",
+        "outcome": "partly_allowed",
+        "refund": 0,
+        "compensation": 5000,
+        "costs": 5000,
+        "verified": true,
+        "reviewed": true
+      },
+      {
+        "url": "https://indiankanoon.org/doc/85099007/",
+        "commission": "Haryana SCDRC",
+        "caseNumber": "SC/6/FA/511/2025",
+        "date": "2026-06-09",
+        "category": "ecommerce",
+        "summary": "Old damaged laptop delivered; final order directs payment of the agreed decretal sum. Components follow the stated refund and compensation; no separate cost inferred.",
+        "outcome": "partly_allowed",
+        "refund": 27190,
+        "compensation": 2200,
+        "costs": null,
+        "verified": true,
+        "reviewed": true
+      },
+      {
+        "url": "https://indiankanoon.org/doc/138959146/",
+        "commission": "Haryana SCDRC",
+        "caseNumber": "FA 595/2016",
+        "date": "2016-07-29",
+        "category": "ecommerce",
+        "summary": "Territorial-jurisdiction dismissal set aside and complaint remanded. No final substantive award.",
+        "outcome": "unclear",
+        "refund": null,
+        "compensation": null,
+        "costs": null,
+        "verified": true,
+        "reviewed": true
+      }
+    ],
+    "usedSeed": true,
+    "stats": {
+      "n": 4,
+      "counts": {
+        "allowed": 0,
+        "partly_allowed": 2,
+        "dismissed": 1,
+        "unclear": 1
+      },
+      "insufficient_data": false,
+      "refundKnownN": 2,
+      "refundGrantedRate": 0.5,
+      "compensationN": 2,
+      "compensationMin": 2200,
+      "compensationMedian": null,
+      "compensationMax": 5000,
+      "totalAwardRange": [
+        10000,
+        10000
+      ],
+      "awardToClaimRange": [
+        0.16129032258064516,
+        0.16129032258064516
+      ],
+      "note": "Descriptive sample only. Missing values are excluded, never treated as zero. Interest excluded. Not a prediction."
+    },
+    "verdict": {
+      "strength": "moderate",
+      "helps": [
+        "invoice",
+        "delivery confirmation",
+        "photos",
+        "proof of payment"
+      ],
+      "hurts": [
+        "denial of refund by grievance officer"
+      ],
+      "nextStep": "nch",
+      "nextStepReason": "The complainant has already escalated the issue to the grievance officer and was denied a refund. The next step would be to file a complaint with the National Consumer Helpline (NCH).",
+      "nchDraft": "To, The National Consumer Helpline, Subject: Defective Phone - Request for Refund and Compensation. I, {complainant name}, purchased a phone from {opposite party name} on {purchase date} for personal use. The phone was defective and I requested a refund, but the grievance officer denied my request. I am seeking a refund of {amount paid} and compensation of {compensation sought}. I have attached the invoice, delivery confirmation, and photos of the defective phone. Please look into this matter and take necessary actions.",
+      "caveats": [
+        "The complainant should ensure that they have all the necessary documents and evidence to support their claim.",
+        "The complainant should be aware of the rules and regulations of the NCH and the consumer protection laws."
+      ]
+    },
+    "warnings": [
+      "Direct search is unavailable; using Otari built-in search and fetch tools.",
+      "Fewer than three live orders were verified. Using only reviewed, category-matched seed orders where available; otherwise statistics remain insufficient."
+    ],
+    "trace": [
+      {
+        "stage": "assemble",
+        "model": null,
+        "provider": null,
+        "fallback": null,
+        "attempts": null,
+        "requestId": null,
+        "guardrails": null,
+        "costUsd": null,
+        "ms": 8943,
+        "status": 200,
+        "headers": {}
+      },
+      {
+        "stage": "assemble",
+        "model": null,
+        "provider": null,
+        "fallback": null,
+        "attempts": null,
+        "requestId": null,
+        "guardrails": null,
+        "costUsd": null,
+        "ms": 1278,
+        "status": 200,
+        "headers": {}
+      },
+      {
+        "stage": "extract",
+        "model": "Qwen2.5-VL-72B-Instruct",
+        "provider": "ovhcloud",
+        "fallback": false,
+        "attempts": 1,
+        "requestId": "e0625861-45d2-4d76-a83e-3bb54f434262",
+        "guardrails": null,
+        "costUsd": 0.000531,
+        "ms": 6387,
+        "status": 200,
+        "headers": {
+          "otari-attempt-count": "1",
+          "otari-end-user-budget": "42787196-dc69-42cf-8f1c-9da00860a9c6",
+          "otari-fallback": "false",
+          "otari-model": "Qwen2.5-VL-72B-Instruct",
+          "otari-provider": "ovhcloud",
+          "otari-request-id": "e0625861-45d2-4d76-a83e-3bb54f434262",
+          "otari-response-duration-ms": "5722",
+          "server-timing": "otari;dur=93.0;desc=\"Otari before the provider\", upstream;dur=5628.8;desc=\"Provider until its answer or first chunk\", total;dur=5721.8;desc=\"Otari and the provider\""
+        }
+      },
+      {
+        "stage": "rules",
+        "model": null,
+        "provider": null,
+        "fallback": null,
+        "attempts": null,
+        "requestId": "61a7b029-ff93-4e9c-8743-5a66195330bd",
+        "guardrails": null,
+        "costUsd": 0.01,
+        "ms": 2610,
+        "status": 200,
+        "headers": {
+          "otari-end-user-budget": "42787196-dc69-42cf-8f1c-9da00860a9c6",
+          "otari-request-id": "61a7b029-ff93-4e9c-8743-5a66195330bd"
+        }
+      },
+      {
+        "stage": "search",
+        "model": "Meta-Llama-3_3-70B-Instruct",
+        "provider": "ovhcloud",
+        "fallback": false,
+        "attempts": 1,
+        "requestId": "f89f7e0a-4a75-41e5-9fb4-116b96d1d656",
+        "guardrails": null,
+        "costUsd": 0.049486,
+        "ms": 22929,
+        "status": 200,
+        "headers": {
+          "otari-attempt-count": "1",
+          "otari-end-user-budget": "42787196-dc69-42cf-8f1c-9da00860a9c6",
+          "otari-fallback": "false",
+          "otari-model": "Meta-Llama-3_3-70B-Instruct",
+          "otari-provider": "ovhcloud",
+          "otari-request-id": "f89f7e0a-4a75-41e5-9fb4-116b96d1d656",
+          "otari-response-duration-ms": "22455",
+          "server-timing": "otari;dur=101.4;desc=\"Otari before the provider\", upstream;dur=22353.4;desc=\"Provider until its answer or first chunk\", total;dur=22454.8;desc=\"Otari and the provider\""
+        }
+      },
+      {
+        "stage": "award",
+        "model": null,
+        "provider": null,
+        "fallback": null,
+        "attempts": null,
+        "requestId": "ffe50e88-fd41-4763-9ea4-afd5cd1361eb",
+        "guardrails": null,
+        "costUsd": 0.01,
+        "ms": 4162,
+        "status": 200,
+        "headers": {
+          "otari-end-user-budget": "42787196-dc69-42cf-8f1c-9da00860a9c6",
+          "otari-request-id": "ffe50e88-fd41-4763-9ea4-afd5cd1361eb"
+        }
+      },
+      {
+        "stage": "verdict",
+        "model": "Meta-Llama-3_3-70B-Instruct",
+        "provider": "ovhcloud",
+        "fallback": false,
+        "attempts": 1,
+        "requestId": "879a1cc4-3d4d-49dc-a7e6-b9deb511fc06",
+        "guardrails": null,
+        "costUsd": 0.001364,
+        "ms": 12053,
+        "status": 200,
+        "headers": {
+          "otari-attempt-count": "1",
+          "otari-end-user-budget": "42787196-dc69-42cf-8f1c-9da00860a9c6",
+          "otari-fallback": "false",
+          "otari-model": "Meta-Llama-3_3-70B-Instruct",
+          "otari-provider": "ovhcloud",
+          "otari-request-id": "879a1cc4-3d4d-49dc-a7e6-b9deb511fc06",
+          "otari-response-duration-ms": "11764",
+          "server-timing": "otari;dur=56.0;desc=\"Otari before the provider\", upstream;dur=11707.9;desc=\"Provider until its answer or first chunk\", total;dur=11763.9;desc=\"Otari and the provider\""
+        }
+      },
+      {
+        "stage": "assemble",
+        "model": null,
+        "provider": null,
+        "fallback": null,
+        "attempts": null,
+        "requestId": null,
+        "guardrails": null,
+        "costUsd": null,
+        "ms": 1247,
+        "status": 200,
+        "headers": {}
+      },
+      {
+        "stage": "assemble",
+        "model": null,
+        "provider": null,
+        "fallback": null,
+        "attempts": null,
+        "requestId": null,
+        "guardrails": null,
+        "costUsd": null,
+        "ms": 283,
+        "status": 200,
+        "headers": {}
+      }
+    ],
+    "costUsd": 0.071381,
+    "costIncomplete": false,
+    "toolCalls": [
+      {
+        "stage": "search",
+        "type": "web_search",
+        "status": "completed",
+        "query": "India e-commerce refund consumer commission refund compensation order site:indiankanoon.org/doc/",
+        "sources": [
+          {
+            "url": "https://indiankanoon.org/doc/75037181",
+            "title": "Indiarmart Intermesh Ltd. vs Abdul Mannan Sardar on 27 July, 2026",
+            "published_date": null
+          },
+          {
+            "url": "https://indiankanoon.org/doc/188026850",
+            "title": "Amazon Seller Services Pvt.Ltd. vs Ms. Jaspreet Kaur & Anr. on 20 ...",
+            "published_date": null
+          },
+          {
+            "url": "https://indiankanoon.org/doc/104897146",
+            "title": "Jatin Bansal vs M/S Amazon Reseller Services Pvt. Ltd. on 12 March, 2024",
+            "published_date": null
+          },
+          {
+            "url": "https://indiankanoon.org/doc/85099007",
+            "title": "State Consumer Disputes Redressal Commission - Indian Kanoon",
+            "published_date": null
+          },
+          {
+            "url": "https://indiankanoon.org/doc/169545990",
+            "title": "Rajesh Kudi vs Ram Singh & Anr. on 17 September, 2024",
+            "published_date": null
+          }
+        ]
+      },
+      {
+        "stage": "search",
+        "type": "web_search",
+        "status": "completed",
+        "query": "India e-commerce refund District consumer commission judgment refund compensation",
+        "sources": [
+          {
+            "url": "https://onlinelegalquery.com/blog/digital-refund-delays-india-legal-rights-compensation",
+            "title": "Digital Refund Delay in India: Know Your Legal Rights",
+            "published_date": null
+          },
+          {
+            "url": "https://lawrato.com/recovery-legal-advice/consumer-court-claim-amount-for-e-commerce-refund-denial-case-270142",
+            "title": "Consumer court claim amount for e-commerce refund denial case - FREE LEGAL ADVICE",
+            "published_date": null
+          },
+          {
+            "url": "https://www.ncdrclawyers.com/legal-blogs/e-commerce-fraud-and-refund-denial-strategy",
+            "title": "E-Commerce Fraud and Refund Denial Strategy",
+            "published_date": null
+          },
+          {
+            "url": "https://www.instagram.com/reel/DM74qt0TAM5?hl=en",
+            "title": "Instagram",
+            "published_date": null
+          },
+          {
+            "url": "https://finance.yahoo.com/news/why-beijing-put-e-commerce-093000138.html",
+            "title": "Why Beijing has put e-commerce sector's 'refund-only' policy and PDD under scrutiny",
+            "published_date": null
+          }
+        ]
+      },
+      {
+        "stage": "search",
+        "type": "web_fetch",
+        "status": "failed",
+        "url": "https://indiankanoon.org/doc/75037181",
+        "error": {
+          "provider": "builtin",
+          "status": 403,
+          "tag": "http_status",
+          "retryable": false
+        }
+      },
+      {
+        "stage": "search",
+        "type": "web_fetch",
+        "status": "failed",
+        "url": "https://indiankanoon.org/doc/188026850",
+        "error": {
+          "provider": "builtin",
+          "status": 403,
+          "tag": "http_status",
+          "retryable": false
+        }
+      },
+      {
+        "stage": "search",
+        "type": "web_fetch",
+        "status": "failed",
+        "url": "https://indiankanoon.org/doc/104897146",
+        "error": {
+          "provider": "builtin",
+          "status": 403,
+          "tag": "http_status",
+          "retryable": false
+        }
+      },
+      {
+        "stage": "search",
+        "type": "web_fetch",
+        "status": "failed",
+        "url": "https://indiankanoon.org/doc/169545990",
+        "error": {
+          "provider": "builtin",
+          "status": 403,
+          "tag": "http_status",
+          "retryable": false
+        }
+      },
+      {
+        "stage": "search",
+        "type": "web_fetch",
+        "status": "failed",
+        "url": "https://indiankanoon.org/doc/85099007",
+        "error": {
+          "provider": "builtin",
+          "status": 403,
+          "tag": "http_status",
+          "retryable": false
+        }
+      },
+      {
+        "stage": "search",
+        "type": "web_fetch",
+        "status": "failed",
+        "url": "https://indiankanoon.org/doc/169545990",
+        "error": {
+          "provider": "builtin",
+          "status": 403,
+          "tag": "http_status",
+          "retryable": false
+        }
+      },
+      {
+        "stage": "search",
+        "type": "web_fetch",
+        "status": "failed",
+        "url": "https://indiankanoon.org/doc/169545990",
+        "error": {
+          "provider": "builtin",
+          "status": 403,
+          "tag": "http_status",
+          "retryable": false
+        }
+      }
+    ],
+    "budget": [
+      {
+        "user_id": "eu_6323191b855541939771ff10ec5c6c50",
+        "external_id": "nyaycheck-live-demo",
+        "owner_user_id": "svc_a4135d1a6b1645ddb18f99b84fe23f61",
+        "budget_id": "42787196-dc69-42cf-8f1c-9da00860a9c6",
+        "blocked": false,
+        "spend": 0.071381,
+        "reserved": 0,
+        "current_tokens": 42215,
+        "current_requests": 5,
+        "budget_started_at": "2026-11-12T00:00:00+00:00",
+        "next_budget_reset_at": "2026-11-13T00:00:00+00:00",
+        "created_at": "2026-11-12T00:02:55.347747+00:00"
+      }
+    ],
+    "budgetRemainingUsd": 0.42861899999999997,
+    "disclaimer": "Not legal advice. An advocate should review anything significant. Figures reflect past orders and are not predictions."
+  },
+  "sandbox": [
+    {
+      "status": 200,
+      "requestId": "61a7b029-ff93-4e9c-8743-5a66195330bd",
+      "stdout": "{\"eligibility\": {\"value\": true, \"basis\": \"Section 2(7): commercial/resale excluded; self-employment livelihood exception included. Purpose requires factual review.\", \"source_note\": \"https://www.indiacode.nic.in/handle/123456789/15256\", \"confidence\": \"high\"}, \"limitation\": {\"value\": {\"deadline\": \"2028-11-12\", \"daysRemaining\": 731, \"expired\": false}, \"basis\": \"Section 69: two calendar years from stated cause of action. Delay condonation requires sufficient cause; recurring causes and date computation need advocate review.\", \"source_note\": \"https://www.indiacode.nic.in/handle/123456789/15256\", \"confidence\": \"high\"}, \"claimA\": {\"value\": 62000.0, \"basis\": \"Consideration actually paid; primary jurisdiction basis.\", \"source_note\": \"https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf\", \"confidence\": \"high\"}, \"claimB\": {\"value\": 72000.0, \"basis\": \"Comparison only: paid plus requested compensation. Interest omitted because no rate or period was supplied. This is not the governing jurisdiction test.\", \"source_note\": \"https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf\", \"confidence\": \"low\"}, \"forum\": {\"value\": \"District\", \"basis\": \"2021 jurisdiction rules, effective 30 December 2021. District <= 50 lakh; State <= 2 crore; National above.\", \"source_note\": \"https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf\", \"confidence\": \"high\"}, \"alternateForum\": {\"value\": \"District\", \"basis\": \"Non-primary guide comparison; excludes unspecified interest.\", \"source_note\": \"https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf\", \"confidence\": \"low\"}, \"forumConflict\": {\"value\": false, \"basis\": \"Compare primary and alternate basis.\", \"source_note\": \"https://consumeraffairs.gov.in/public/upload/files/1743657766_AR%202024-25_Eng_1744632582.pdf\", \"confidence\": \"high\"}, \"fee\": {\"value\": {\"min\": 0, \"max\": 0}, \"basis\": \"INR; above 20\\u201350 lakh a reported 500/1000 conflict requires registry confirmation. Higher bands use published fee schedule; confirm before filing.\", \"source_note\": \"https://egazette.gov.in/WriteReadData/2023/248158.pdf\", \"confidence\": \"high\"}, \"feeConflictSource\": \"https://niyam.ai/blog/file-consumer-complaint-edaakhil\", \"territory\": {\"value\": \"Where the complainant resides or personally works for gain; confirm the relevant commission.\", \"basis\": \"Sections 34(2), 47(4), 58 as applicable.\", \"source_note\": \"https://www.indiacode.nic.in/handle/123456789/15256\", \"confidence\": \"high\"}, \"checklist\": {\"value\": [\"Invoice or receipt\", \"Chronology and correspondence\", \"Proof of payment\", \"Identity and address proof (submit only to the appropriate authority)\", \"Order confirmation\", \"Delivery and return records\", \"Seller correspondence\"], \"basis\": \"Practical category checklist; commission may require more.\", \"source_note\": \"https://www.indiacode.nic.in/handle/123456789/15256\", \"confidence\": \"high\"}, \"asOf\": \"2026-11-12\"}\n",
+      "stderr": "",
+      "returnCode": 0
+    },
+    {
+      "status": 200,
+      "requestId": "ffe50e88-fd41-4763-9ea4-afd5cd1361eb",
+      "stdout": "{\"n\": 4, \"counts\": {\"allowed\": 0, \"partly_allowed\": 2, \"dismissed\": 1, \"unclear\": 1}, \"insufficient_data\": false, \"refundKnownN\": 2, \"refundGrantedRate\": 0.5, \"compensationN\": 2, \"compensationMin\": 2200.0, \"compensationMedian\": null, \"compensationMax\": 5000.0, \"totalAwardRange\": [10000.0, 10000.0], \"awardToClaimRange\": [0.16129032258064516, 0.16129032258064516], \"note\": \"Descriptive sample only. Missing values are excluded, never treated as zero. Interest excluded. Not a prediction.\"}\n",
+      "stderr": "",
+      "returnCode": 0
+    }
+  ],
+  "webTools": [],
+  "builtInToolCalls": [
+    {
+      "stage": "search",
+      "type": "web_search",
+      "status": "completed",
+      "query": "India e-commerce refund consumer commission refund compensation order site:indiankanoon.org/doc/",
+      "sources": [
+        {
+          "url": "https://indiankanoon.org/doc/75037181",
+          "title": "Indiarmart Intermesh Ltd. vs Abdul Mannan Sardar on 27 July, 2026",
+          "published_date": null
+        },
+        {
+          "url": "https://indiankanoon.org/doc/188026850",
+          "title": "Amazon Seller Services Pvt.Ltd. vs Ms. Jaspreet Kaur & Anr. on 20 ...",
+          "published_date": null
+        },
+        {
+          "url": "https://indiankanoon.org/doc/104897146",
+          "title": "Jatin Bansal vs M/S Amazon Reseller Services Pvt. Ltd. on 12 March, 2024",
+          "published_date": null
+        },
+        {
+          "url": "https://indiankanoon.org/doc/85099007",
+          "title": "State Consumer Disputes Redressal Commission - Indian Kanoon",
+          "published_date": null
+        },
+        {
+          "url": "https://indiankanoon.org/doc/169545990",
+          "title": "Rajesh Kudi vs Ram Singh & Anr. on 17 September, 2024",
+          "published_date": null
+        }
+      ]
+    },
+    {
+      "stage": "search",
+      "type": "web_search",
+      "status": "completed",
+      "query": "India e-commerce refund District consumer commission judgment refund compensation",
+      "sources": [
+        {
+          "url": "https://onlinelegalquery.com/blog/digital-refund-delays-india-legal-rights-compensation",
+          "title": "Digital Refund Delay in India: Know Your Legal Rights",
+          "published_date": null
+        },
+        {
+          "url": "https://lawrato.com/recovery-legal-advice/consumer-court-claim-amount-for-e-commerce-refund-denial-case-270142",
+          "title": "Consumer court claim amount for e-commerce refund denial case - FREE LEGAL ADVICE",
+          "published_date": null
+        },
+        {
+          "url": "https://www.ncdrclawyers.com/legal-blogs/e-commerce-fraud-and-refund-denial-strategy",
+          "title": "E-Commerce Fraud and Refund Denial Strategy",
+          "published_date": null
+        },
+        {
+          "url": "https://www.instagram.com/reel/DM74qt0TAM5?hl=en",
+          "title": "Instagram",
+          "published_date": null
+        },
+        {
+          "url": "https://finance.yahoo.com/news/why-beijing-put-e-commerce-093000138.html",
+          "title": "Why Beijing has put e-commerce sector's 'refund-only' policy and PDD under scrutiny",
+          "published_date": null
+        }
+      ]
+    },
+    {
+      "stage": "search",
+      "type": "web_fetch",
+      "status": "failed",
+      "url": "https://indiankanoon.org/doc/75037181",
+      "error": {
+        "provider": "builtin",
+        "status": 403,
+        "tag": "http_status",
+        "retryable": false
+      }
+    },
+    {
+      "stage": "search",
+      "type": "web_fetch",
+      "status": "failed",
+      "url": "https://indiankanoon.org/doc/188026850",
+      "error": {
+        "provider": "builtin",
+        "status": 403,
+        "tag": "http_status",
+        "retryable": false
+      }
+    },
+    {
+      "stage": "search",
+      "type": "web_fetch",
+      "status": "failed",
+      "url": "https://indiankanoon.org/doc/104897146",
+      "error": {
+        "provider": "builtin",
+        "status": 403,
+        "tag": "http_status",
+        "retryable": false
+      }
+    },
+    {
+      "stage": "search",
+      "type": "web_fetch",
+      "status": "failed",
+      "url": "https://indiankanoon.org/doc/169545990",
+      "error": {
+        "provider": "builtin",
+        "status": 403,
+        "tag": "http_status",
+        "retryable": false
+      }
+    },
+    {
+      "stage": "search",
+      "type": "web_fetch",
+      "status": "failed",
+      "url": "https://indiankanoon.org/doc/85099007",
+      "error": {
+        "provider": "builtin",
+        "status": 403,
+        "tag": "http_status",
+        "retryable": false
+      }
+    },
+    {
+      "stage": "search",
+      "type": "web_fetch",
+      "status": "failed",
+      "url": "https://indiankanoon.org/doc/169545990",
+      "error": {
+        "provider": "builtin",
+        "status": 403,
+        "tag": "http_status",
+        "retryable": false
+      }
+    },
+    {
+      "stage": "search",
+      "type": "web_fetch",
+      "status": "failed",
+      "url": "https://indiankanoon.org/doc/169545990",
+      "error": {
+        "provider": "builtin",
+        "status": 403,
+        "tag": "http_status",
+        "retryable": false
+      }
+    }
+  ],
+  "checks": {
+    "completeCase": true,
+    "requestHeadersPresent": true,
+    "sandboxCompleted": true,
+    "costReported": true,
+    "searchSucceeded": true,
+    "fetchSucceeded": false,
+    "fallbackReported": false,
+    "gatewayGuardrails": "Not claimed; requires an evaluated verdict from a configured profile."
+  }
+}

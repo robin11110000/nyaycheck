@@ -95,6 +95,18 @@ export async function check(
   if (!v.ok) warnings.push(v.error);
   progress('assemble');
   const user = await g.endUsers();
+  const budgets = await g.endUserBudgets();
+  const endUser = user.ok && Array.isArray(user.data) ? user.data[0] : null;
+  const template =
+    budgets.ok && Array.isArray(budgets.data)
+      ? budgets.data.find((budget: any) => budget.budget_id === endUser?.budget_id)
+      : null;
+  const budgetRemainingUsd =
+    typeof template?.max_budget === 'number' &&
+    typeof endUser?.spend === 'number' &&
+    typeof endUser?.reserved === 'number'
+      ? Math.max(0, template.max_budget - endUser.spend - endUser.reserved)
+      : null;
   return {
     status: r.ok && a.ok && v.ok ? 'complete' : 'partial',
     facts: f.data,
@@ -107,7 +119,9 @@ export async function check(
     trace: g.trace,
     costUsd: g.costTotal,
     costIncomplete: g.unknownCosts > 0,
+    toolCalls: g.toolCalls,
     budget: user.ok ? user.data : null,
+    budgetRemainingUsd,
     disclaimer: DISCLAIMER,
   };
 }
